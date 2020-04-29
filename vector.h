@@ -5,7 +5,7 @@
 #include <algorithm>
 
 
-template<class T>
+//template<class T>
 class vector
 {
 public:
