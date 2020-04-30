@@ -37,9 +37,14 @@ public:
     virtual int getArea(){return 0;};
     virtual int getPerim(){return 0;};
 
+    //virtual void draw(QPaintDevice* device); // ?? not sure yet
+   // virtual void move(int x1, int x2);
+
     QPen pen;
 
     QBrush brush;
+
+    QPainter painter;
 
 
 protected:
