@@ -7,6 +7,8 @@ class Circle: public Shape
 {
 public:
     Circle();
+
+    virtual void draw(QPaintDevice* device);
 };
 
 #endif // CIRCLE_H

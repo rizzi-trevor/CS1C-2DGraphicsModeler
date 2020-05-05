@@ -7,6 +7,8 @@ class Polygon: public Shape
 {
 public:
     Polygon();
+
+    virtual void draw(QPaintDevice* device);
 };
 
 #endif // POLYGON_H

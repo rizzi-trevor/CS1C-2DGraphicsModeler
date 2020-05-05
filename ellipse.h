@@ -7,6 +7,8 @@ class Ellipse: public Shape
 {
 public:
     Ellipse();
+
+    virtual void draw(QPaintDevice* device);
 };
 
 #endif // ELLIPSE_H

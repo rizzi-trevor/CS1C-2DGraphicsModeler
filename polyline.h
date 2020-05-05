@@ -7,6 +7,8 @@ class Polyline: public Shape
 {
 public:
     Polyline();
+
+    virtual void draw(QPaintDevice* device);
 };
 
 #endif // POLYLINE_H

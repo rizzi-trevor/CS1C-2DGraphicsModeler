@@ -23,10 +23,8 @@ public:
 
     Shape shapeAtIndex(int index);
 
-signals:
-
 protected:
-    //void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
 
 private:
 

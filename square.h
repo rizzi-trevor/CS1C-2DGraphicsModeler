@@ -7,6 +7,8 @@ class Square: public Shape
 {
 public:
     Square();
+
+    virtual void draw(QPaintDevice* device);
 };
 
 #endif // SQUARE_H

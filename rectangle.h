@@ -7,6 +7,8 @@ class Rectangle: public Shape
 {
 public:
     Rectangle();
+
+    virtual void draw(QPaintDevice* device);
 };
 
 #endif // RECTANGLE_H
