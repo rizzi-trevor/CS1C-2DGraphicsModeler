@@ -18,33 +18,39 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     circle.cpp \
     ellipse.cpp \
+    fileparser.cpp \
     line.cpp \
     main.cpp \
     mainwindow.cpp \
     polygon.cpp \
     polyline.cpp \
     rectangle.cpp \
+    renderarea.cpp \
     shape.cpp \
     square.cpp \
     text.cpp \
-    vector.cpp
+    viewer.cpp
 
 HEADERS += \
     circle.h \
     ellipse.h \
+    fileparser.h \
     line.h \
     loginwindow.h \
     mainwindow.h \
     polygon.h \
     polyline.h \
     rectangle.h \
+    renderarea.h \
     shape.h \
     square.h \
     text.h \
-    vector.h
+    vector.h \
+    viewer.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    viewer.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -11,9 +11,10 @@ Shape::Shape()
     pen.setJoinStyle(MiterJoin);
     brush.setColor(black);
     brush.setStyle(SolidPattern);
+    shapeID = 1;
 }
 
-Shape::Shape(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width)
+Shape::Shape(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
 {
     pen.setColor(color);
     pen.setWidth(width);
@@ -22,6 +23,8 @@ Shape::Shape(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCs
     pen.setJoinStyle(PJstyle);
     brush.setColor(color);
     brush.setStyle(Bstyle);
+
+    shapeID = id;
 
 }
 

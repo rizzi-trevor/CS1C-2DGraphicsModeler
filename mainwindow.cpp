@@ -24,8 +24,9 @@ void MainWindow::onLoginClick()
     {
         this->ui->warningLabel->setText("");
         this->hide();
+        view = new viewer(this);
+        view->show(); // currently crashes the programmmmmmmm
 
-        //Open admin program
 
     }
     else

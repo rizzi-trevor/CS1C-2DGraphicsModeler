@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
 #include <QMainWindow>
+#include "viewer.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,5 +27,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    viewer *view;
 };
 #endif // MAINWINDOW_H

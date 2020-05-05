@@ -1,11 +1,14 @@
 #include "line.h"
 
-Line::Line()
+Line::Line(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
+     :Shape(color, Pstyle, PCstyle, PJstyle, Bstyle, width, id)
 {
+    start.setX(0);
+    start.setY(0);
+    end.setX(100);
+    end.setY(100);
 
 }
-
-
 
 Line::~Line(){}
 
