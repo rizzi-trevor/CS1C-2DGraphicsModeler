@@ -66,7 +66,7 @@ void Shape::setBrushStyle(const BrushStyle &style)
    brush.setStyle(style);
 }
 
-void Shape::draw(QPaintDevice* device) //needs change
+void Shape::draw(QPaintDevice* device)
 {
     painter.begin(device);
     painter.setPen(pen);

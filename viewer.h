@@ -2,6 +2,8 @@
 #define VIEWER_H
 
 #include <QMainWindow>
+#include "renderarea.h"
+#include "circle.h"
 
 namespace Ui {
 class viewer;

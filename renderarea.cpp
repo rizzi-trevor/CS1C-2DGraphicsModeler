@@ -1,8 +1,8 @@
 #include "renderarea.h"
 
 RenderArea::RenderArea(QWidget *parent)
+           :QWidget(parent)
 {
-
 
 }
 
@@ -18,4 +18,9 @@ void RenderArea::paintEvent(QPaintEvent *)
         ++i;
     }
 
+}
+
+void RenderArea::addShape(Shape* addShape)
+{
+    shapeList.push_back(addShape);
 }

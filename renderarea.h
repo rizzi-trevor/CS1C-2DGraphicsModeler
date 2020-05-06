@@ -15,7 +15,7 @@ class RenderArea : public QWidget
 public:
     explicit RenderArea(QWidget *parent = 0);
 
-    void addShape(int index, int val);
+    void addShape(Shape* addShape);
     void removeShape(int index);
 
     int listSize();
@@ -29,7 +29,6 @@ protected:
 private:
 
     myVec::vector<Shape*> shapeList = ParseFile(12);
-    //create the vector here!
 
 };
 
