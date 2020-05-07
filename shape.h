@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QPen>
 #include <QPoint>
+#include <QFont>
 #include "math.h"
 
 using namespace Qt;
