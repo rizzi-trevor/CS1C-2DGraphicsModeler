@@ -99,7 +99,7 @@ void Text::setFontStyle(string fontStyle){
     else if(fontStyle == "Italic"){
         font.setStyle(QFont::StyleItalic);
     }
-    else if(fontStyle == "Oblique){
+    else if(fontStyle == "Oblique"){
         font.setStyle(QFont::StyleOblique);
     }
     else{
