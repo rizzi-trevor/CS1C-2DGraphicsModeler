@@ -27,6 +27,7 @@ private:
     QPoint *pointList;
     int pointCount;
     vector<QPoint> points;
+
 };
 
 #endif // POLYGON_H
