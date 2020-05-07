@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     circle.cpp \
+    confirmpage.cpp \
     ellipse.cpp \
     fileparser.cpp \
     line.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
 
 HEADERS += \
     circle.h \
+    confirmpage.h \
     ellipse.h \
     fileparser.h \
     line.h \
@@ -49,6 +51,7 @@ HEADERS += \
     viewer.h
 
 FORMS += \
+    confirmpage.ui \
     mainwindow.ui \
     viewer.ui
 

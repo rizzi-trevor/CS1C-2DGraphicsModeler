@@ -32,8 +32,6 @@ private:
 
     myVec::vector<Shape*> shapeList = ParseFile(0);
 
-   // myVec::vector<Shape*> shapeList;
-
 };
 
 #endif // RENDERAREA_H

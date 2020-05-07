@@ -200,5 +200,144 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>lineButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddLine()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>1035</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>polylineButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddPolyline()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>188</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>891</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>polygonButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddPolygone()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>83</x>
+     <y>924</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rectangleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddRectangle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>168</x>
+     <y>139</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>866</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>squareButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddSquare()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>874</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ellipsebutton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddEllipse()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>201</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>203</x>
+     <y>867</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>circleButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddCircle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>76</x>
+     <y>912</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>textButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onAddText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>870</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onAddLine()</slot>
+  <slot>onAddPolyline()</slot>
+  <slot>onAddPolygone()</slot>
+  <slot>onAddRectangle()</slot>
+  <slot>onAddSquare()</slot>
+  <slot>onAddEllipse()</slot>
+  <slot>onAddCircle()</slot>
+  <slot>onAddText()</slot>
+ </slots>
 </ui>
