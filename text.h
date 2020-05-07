@@ -27,8 +27,8 @@ public:
     void setTextPointSize(int pointSize);
     void setTextColor(string color);
     void setFontFamily(string fontFamily);
-    void setStyle(string fontStyle);
-    void setWeight(string fontWeight);
+    void setFontStyle(string fontStyle);
+    void setFontWeight(string fontWeight);
     
 private:
     int fontAlignment;
