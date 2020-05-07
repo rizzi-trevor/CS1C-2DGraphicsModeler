@@ -101,7 +101,7 @@ void Text::setFontStyle(string fontStyle){
     }
     else if(fontStyle == "Oblique){
         font.setStyle(QFont::StyleOblique);
-        }
+    }
     else{
         font.setStyle(QFont::StyleNormal);
     }
