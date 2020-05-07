@@ -4,6 +4,8 @@
 #include "shape.h"
 #include "vector.h"
 #include "fileparser.h"
+#include <QDebug>
+#include "QDebug"
 
 #include <QWidget>
 
@@ -28,7 +30,9 @@ protected:
 
 private:
 
-    myVec::vector<Shape*> shapeList = ParseFile(12);
+    myVec::vector<Shape*> shapeList = ParseFile(0);
+
+   // myVec::vector<Shape*> shapeList;
 
 };
 

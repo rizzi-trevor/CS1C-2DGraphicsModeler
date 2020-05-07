@@ -6,7 +6,7 @@
 class Ellipse: public Shape
 {
 public:
-    Ellipse(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int a, int b, int x, int y);
+    Ellipse(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int a, int b, int x, int y);
     ~Ellipse();
 
     virtual void draw(QPaintDevice* device);

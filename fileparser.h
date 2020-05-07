@@ -5,20 +5,27 @@
 #include <fstream>
 #include "shape.h"
 #include "line.h"
+#include "circle.h"
+#include "polygon.h"
+#include "polyline.h"
+#include "rectangle.h"
+#include "square.h"
+#include "ellipse.h"
+#include "text.h"
 #include "vector.h"
 
 using namespace std;
 
 myVec::vector<Shape*> ParseFile(int size);
 
-Shape* readLine(ifstream &inFile, int id);
-Shape* readPolyLine(ifstream &inFile, int id);
-Shape* readPolygon(ifstream &inFile, int id);
-Shape* readRectangle(ifstream &inFile, int id);
-Shape* readSquare(ifstream &inFile, int id);
-Shape* readEllipse(ifstream &inFile, int id);
-Shape* readCircle(ifstream &inFile, int id);
-Shape* readText(ifstream &inFile, int id);
+Shape* readLine(ifstream &inFile);
+Shape* readPolyLine(ifstream &inFile);
+Shape* readPolygon(ifstream &inFile);
+Shape* readRectangle(ifstream &inFile);
+Shape* readSquare(ifstream &inFile);
+Shape* readEllipse(ifstream &inFile);
+Shape* readCircle(ifstream &inFile);
+Shape* readText(ifstream &inFile);
 
 QColor getColor(string color);
 PenStyle getPenStyle(string style);

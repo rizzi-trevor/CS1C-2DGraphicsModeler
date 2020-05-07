@@ -1,7 +1,7 @@
 #include "line.h"
 
 Line::Line(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
-     :Shape(color, Pstyle, PCstyle, PJstyle, Bstyle, width, id)
+     :Shape(white, color, Pstyle, PCstyle, PJstyle, Bstyle, width, id) // that white might be an issue idk
 {
     start.setX(0);
     start.setY(0);

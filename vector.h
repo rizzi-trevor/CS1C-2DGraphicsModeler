@@ -3,6 +3,7 @@
 
 using namespace std;
 #include <algorithm>
+#include "QDebug"
 
 namespace myVec{
     template<class T>
@@ -72,6 +73,7 @@ namespace myVec{
                 reserve(8);
             else if(size_v == space)
                 reserve(2 * space);
+
             elem[size_v] = d;
             ++size_v;
         }

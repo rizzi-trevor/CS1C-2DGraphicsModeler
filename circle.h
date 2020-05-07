@@ -6,7 +6,7 @@
 class Circle: public Shape
 {
 public:
-    Circle(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int radius, int x, int y);
+    Circle(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int radius, int x, int y);
     ~Circle();
 
     virtual void draw(QPaintDevice* device);

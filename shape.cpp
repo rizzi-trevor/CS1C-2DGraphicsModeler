@@ -14,16 +14,15 @@ Shape::Shape()
     shapeID = 1;
 }
 
-Shape::Shape(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
+Shape::Shape(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
 {
     pen.setColor(color);
     pen.setWidth(width);
     pen.setStyle(Pstyle);
     pen.setCapStyle(PCstyle);
     pen.setJoinStyle(PJstyle);
-    brush.setColor(color);
+    brush.setColor(bColor);
     brush.setStyle(Bstyle);
-
     shapeID = id;
 
 }

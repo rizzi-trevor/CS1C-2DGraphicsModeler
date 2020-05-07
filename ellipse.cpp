@@ -1,9 +1,11 @@
 #include "ellipse.h"
 
-Ellipse::Ellipse(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int a, int b, int x, int y)
-        :Shape(color, Pstyle, PCstyle, PJstyle, Bstyle, width, id)
+Ellipse::Ellipse(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int a, int b, int x, int y)
+        :Shape(bColor, color, Pstyle, PCstyle, PJstyle, Bstyle, width, id)
 {
-
+    setCenter(x, y);
+    setA(a);
+    setB(b);
 }
 
 
