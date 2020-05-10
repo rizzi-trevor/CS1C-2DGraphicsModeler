@@ -11,18 +11,10 @@ namespace shapeID
     extern int I_D;
 }
 
-/**
- * @file
- */
-
-
-/**
- * \class confirmPage
- *
- * \brief class sets breifs user on confirmation on trip planning actions
- *
- *
- */
+namespace properID
+{
+    extern int UNIQUE_ID;
+}
 
 namespace Ui {
 class confirmpage;
@@ -33,11 +25,16 @@ class confirmpage : public QDialog
     Q_OBJECT
 public:
 
+    //! confirmpage explicit constructor
     explicit confirmpage(QWidget *parent = nullptr);
 
+    //! confirmpage destrcutor
     ~confirmpage();
 
+    //! confirmpage constructor to confirm adding shapes
     confirmpage(QWidget *parent, bool &returnAnswer);
+
+    //! gets data from confirm page
     bool getData();
 
     Line *myLine;
@@ -50,10 +47,15 @@ public:
 
 
 private slots:
+
+    //! Cancels the add shape
     void onCancelClick();
 
+    //! confirms addition of a shape
     void onConfirmClick();
 
+
+    //! confirms addition of points to a shape
     void onAddClick();
 
 private:

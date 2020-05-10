@@ -24,8 +24,8 @@ void MainWindow::onLoginClick()
     {
         this->ui->warningLabel->setText("");
         this->hide();
-        view = new viewer(this);
-        view->show(); // currently crashes the programmmmmmmm
+        view = new viewer(this, true);
+        view->show();
 
 
     }
@@ -47,7 +47,8 @@ void MainWindow::onClearClick()
 
 void MainWindow::onModelerClick()
 {
-
-    //open graphics modeler
-
+    this->ui->warningLabel->setText("");
+    this->hide();
+    view = new viewer(this, false);
+    view->show();
 }

@@ -15,17 +15,30 @@ class RenderArea : public QWidget
 {
         Q_OBJECT
 public:
+    //! explicit render area constructor
     explicit RenderArea(QWidget *parent = 0);
 
+    //! add shape to shape vector
     void addShape(Shape* addShape);
+
+    //! remove shape from shape vector
     void removeShape(int index);
 
+    myVec::vector<Shape*> returnShapeList();
+
+    //! return list size of shape vector
     int listSize();
+
+    //! return the id of a shape at a given index
     int shapeIdAtIndex(int index);
 
+
+    //! return the shape at a given index
     Shape shapeAtIndex(int index);
 
 protected:
+
+    //! paint the shape vector to the canvas
     void paintEvent(QPaintEvent *event) override;
 
 private:

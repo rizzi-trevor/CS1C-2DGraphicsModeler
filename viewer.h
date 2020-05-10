@@ -2,6 +2,8 @@
 #define VIEWER_H
 
 #include <QMainWindow>
+#include <QTableWidgetItem>
+#include <QTableWidget>
 #include "renderarea.h"
 #include "circle.h"
 
@@ -15,7 +17,15 @@ class viewer : public QMainWindow
 
 public:
     explicit viewer(QWidget *parent = nullptr);
+
+    viewer(QWidget *parent, bool admin);
     ~viewer();
+
+    void displayVector();
+
+    void updateScreen();
+
+    void removeShape();
 
 public slots:
 
@@ -35,9 +45,14 @@ public slots:
 
     void onAddText();
 
+    void onLogout();
+
+    void onRemoveClick();
+
 
 private:
     Ui::viewer *ui;
+
 };
 
 #endif // VIEWER_H

@@ -1,4 +1,5 @@
 #include "rectangle.h"
+#include <QDebug>
 
 Rectangle::Rectangle()
           :Shape()
@@ -12,8 +13,10 @@ Rectangle::Rectangle(const QColor &bColor, const QColor &color, const PenStyle &
 
     startPoint.setX(x);
     startPoint.setY(y);
-    width = w;
+    this->width = w;
     length = l;
+
+    shapeName = "Rectangle";
 
 }
 
@@ -25,10 +28,13 @@ Rectangle::~Rectangle()
 
 void Rectangle::draw(QPaintDevice* device) //needs change
 {
+
     painter.begin(device);
+    painter.drawText(startPoint - QPoint {0, 4}, QString("ID: %1").arg(getShapeID()));
     painter.setPen(pen);
     painter.setBrush(brush);
     painter.drawRect(startPoint.rx(), startPoint.ry(), width, length);
+
     painter.end();
 
 }

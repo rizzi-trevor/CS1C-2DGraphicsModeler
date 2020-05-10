@@ -125,7 +125,7 @@ Shape* readLine(ifstream &inFile)
     qtJoin = getPJStyle(join);
 
 
-    Line *line = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 1);
+    Line *line = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 1, front, end);
     return line;
 }
 
@@ -262,8 +262,10 @@ Shape* readRectangle(ifstream& inFile)
 
     inFile.ignore(numeric_limits<streamsize>::max(), ',');
     inFile >> l;
-    inFile.ignore(numeric_limits<streamsize>::max(), ',');
+    inFile.ignore(numeric_limits<streamsize>::max(), ','); // right here
     inFile >> w;
+    qDebug() << "POOOO";
+    qDebug() << w;
 
     QPoint point(x, y);
 
@@ -350,7 +352,7 @@ Shape* readSquare(ifstream& inFile)
     getline(inFile, brushStyle);
     qtBrush = getBrushStyle(brushStyle);
 
-    Square *square = new Square(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4, w, x , y);
+    Square *square = new Square(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 5, w, x , y);
 
     return square;
 }

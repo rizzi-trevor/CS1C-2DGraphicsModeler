@@ -16,6 +16,8 @@ Polygon::Polygon(const QColor &bColor, const QColor &color, const PenStyle &Psty
 
     pointCount = Qpoints.size();
 
+    shapeName = "Polygon";
+
 }
 
 Polygon::~Polygon()
@@ -42,6 +44,7 @@ void Polygon::initializeList()
 void Polygon::draw(QPaintDevice* device)
 {
     painter.begin(device);
+    painter.drawText(pointList[0] - QPoint{35 , 15}, QString("ID: %1").arg(getShapeID()));
     painter.setPen(getPen());
     painter.setBrush(brush);
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1355</width>
-    <height>857</height>
+    <width>1559</width>
+    <height>1102</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -46,7 +46,7 @@
    <widget class="QPushButton" name="polylineButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>90</y>
       <width>75</width>
       <height>23</height>
@@ -59,7 +59,7 @@
    <widget class="QPushButton" name="polygonButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>130</y>
       <width>75</width>
       <height>23</height>
@@ -72,7 +72,7 @@
    <widget class="QPushButton" name="rectangleButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>130</y>
       <width>75</width>
       <height>23</height>
@@ -85,7 +85,7 @@
    <widget class="QPushButton" name="textButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>210</y>
       <width>75</width>
       <height>23</height>
@@ -98,7 +98,7 @@
    <widget class="QPushButton" name="ellipsebutton">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>140</x>
       <y>170</y>
       <width>75</width>
       <height>23</height>
@@ -111,7 +111,7 @@
    <widget class="QPushButton" name="squareButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>170</y>
       <width>75</width>
       <height>23</height>
@@ -124,7 +124,7 @@
    <widget class="QPushButton" name="circleButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>210</y>
       <width>75</width>
       <height>23</height>
@@ -137,7 +137,7 @@
    <widget class="QPushButton" name="lineButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>90</y>
       <width>75</width>
       <height>23</height>
@@ -150,11 +150,18 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>90</x>
       <y>50</y>
-      <width>71</width>
+      <width>81</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="frameShape">
      <enum>QFrame::NoFrame</enum>
@@ -166,7 +173,7 @@
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>60</x>
       <y>60</y>
       <width>131</width>
       <height>16</height>
@@ -176,11 +183,11 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="logout">
     <property name="geometry">
      <rect>
-      <x>1210</x>
-      <y>10</y>
+      <x>1260</x>
+      <y>0</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -189,6 +196,174 @@
      <string>Logout</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Rendered Shapes</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="shapeTable">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>330</y>
+      <width>191</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="autoScroll">
+     <bool>true</bool>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::SelectedClicked</set>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QFrame" name="addFrame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>211</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>211</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="lineWidth">
+     <number>5</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="adminLabel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="removeButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>810</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Remove selected shape</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="removeLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>870</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>840</y>
+      <width>211</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Edit selected shape</string>
+    </property>
+   </widget>
+   <zorder>frame_3</zorder>
+   <zorder>addFrame</zorder>
+   <zorder>canvas</zorder>
+   <zorder>frame</zorder>
+   <zorder>polylineButton</zorder>
+   <zorder>polygonButton</zorder>
+   <zorder>rectangleButton</zorder>
+   <zorder>textButton</zorder>
+   <zorder>ellipsebutton</zorder>
+   <zorder>squareButton</zorder>
+   <zorder>circleButton</zorder>
+   <zorder>lineButton</zorder>
+   <zorder>label</zorder>
+   <zorder>line</zorder>
+   <zorder>logout</zorder>
+   <zorder>label_2</zorder>
+   <zorder>shapeTable</zorder>
+   <zorder>adminLabel</zorder>
+   <zorder>removeButton</zorder>
+   <zorder>removeLabel</zorder>
+   <zorder>editButton</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -196,7 +371,7 @@
   <customwidget>
    <class>RenderArea</class>
    <extends>QGraphicsView</extends>
-   <header>renderarea.h</header>
+   <header location="global">renderarea.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
@@ -329,6 +504,38 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>logout</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onLogout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1301</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1348</x>
+     <y>693</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onRemoveClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>565</x>
+     <y>889</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>1233</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onAddLine()</slot>
@@ -339,5 +546,7 @@
   <slot>onAddEllipse()</slot>
   <slot>onAddCircle()</slot>
   <slot>onAddText()</slot>
+  <slot>onLogout()</slot>
+  <slot>onRemoveClick()</slot>
  </slots>
 </ui>

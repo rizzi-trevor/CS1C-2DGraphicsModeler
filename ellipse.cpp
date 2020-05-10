@@ -6,6 +6,8 @@ Ellipse::Ellipse(const QColor &bColor, const QColor &color, const PenStyle &Psty
     setCenter(x, y);
     setA(a);
     setB(b);
+
+    shapeName = "Ellipse";
 }
 
 
@@ -15,6 +17,7 @@ void Ellipse::draw(QPaintDevice* device) //needs change
     painter.setPen(pen);
     painter.setBrush(brush);
     painter.drawEllipse(startPoint.rx(), startPoint.ry(), a, b);
+    painter.drawText(startPoint, QString("ID: %1").arg(getShapeID()));
     painter.end();
 
 }

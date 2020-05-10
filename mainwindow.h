@@ -15,14 +15,20 @@ class MainWindow : public QMainWindow
 
 public slots:
 
+    //! login to the program
     void onLoginClick();
 
+    //! clear the logintext
     void onClearClick();
 
+    //! use the program as a guest
     void onModelerClick();
 
 public:
+    //! construct login window
     MainWindow(QWidget *parent = nullptr);
+
+    //! destruct login window
     ~MainWindow();
 
 private:

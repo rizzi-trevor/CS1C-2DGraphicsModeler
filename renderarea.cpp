@@ -24,3 +24,27 @@ void RenderArea::addShape(Shape* addShape)
 {
     shapeList.push_back(addShape);
 }
+
+myVec::vector<Shape*> RenderArea::returnShapeList()
+{
+    return shapeList;
+}
+
+
+void RenderArea::removeShape(int index)
+{
+    bool found = false;
+
+    myVec::vector<Shape*>::iterator i = shapeList.begin();
+
+    while(found == false && i < shapeList.end())
+    {
+        if((*i)->getShapeID() == index)
+        {
+            shapeList.erase(i);
+            found = true;
+        }
+
+        ++i;
+    }
+}

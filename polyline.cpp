@@ -16,6 +16,8 @@ Polyline::Polyline(const QColor &bColor, const QColor &color, const PenStyle &Ps
 
     pointCount = Qpoints.size();
 
+    shapeName = "Polyline";
+
 }
 
 Polyline::~Polyline()
@@ -26,6 +28,7 @@ Polyline::~Polyline()
 void Polyline::draw(QPaintDevice* device) //needs change
 {
     painter.begin(device);
+    painter.drawText(pointList[0] - QPoint{35 , 15}, QString("ID: %1").arg(getShapeID()));
     painter.setPen(pen);
     painter.setBrush(brush);
 

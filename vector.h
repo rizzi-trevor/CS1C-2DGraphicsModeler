@@ -128,6 +128,18 @@ namespace myVec{
             ++size_v;
             iterator pp = begin() + index;
         }
+
+        iterator erase(iterator p)
+        {
+            iterator returnIt = p;
+            for(; p < end(); ++p)
+            {
+                * p = *(p + 1);
+
+            }
+            --size_v;
+            return returnIt;
+        }
     };
 }
 

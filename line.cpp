@@ -1,13 +1,13 @@
 #include "line.h"
 #include <QtDebug>
 
-Line::Line(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
+Line::Line(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, QPoint s, QPoint e)
      :Shape(white, color, Pstyle, PCstyle, PJstyle, Bstyle, width, id) // that white might be an issue idk
 {
-    start.setX(0);
-    start.setY(0);
-    end.setX(100);
-    end.setY(100);
+    start = s;
+    end = e;
+
+    shapeName = "Line";
 
 }
 
@@ -16,6 +16,7 @@ Line::~Line(){}
 void Line::draw(QPaintDevice* device)
 {
     painter.begin(device);
+    painter.drawText(start - QPoint{10 , 15}, QString("ID: %1").arg(getShapeID()));
     painter.setPen(pen);
     painter.setBrush(brush);
     painter.drawLine(start, end);
@@ -50,3 +51,4 @@ void Line::setEnd(int x, int y)
     end.setY(y);
 
 }
+

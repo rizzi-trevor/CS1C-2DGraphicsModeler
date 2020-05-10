@@ -1,8 +1,10 @@
 #include "viewer.h"
 #include "ui_viewer.h"
 #include "confirmpage.h"
+#include "mainwindow.h"
 
 int shapeID::I_D = 0;
+int properID::UNIQUE_ID = 0;
 
 viewer::viewer(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +17,37 @@ viewer::viewer(QWidget *parent) :
 
 }
 
+viewer::viewer(QWidget *parent, bool admin)
+       :QMainWindow(parent), ui(new Ui::viewer)
+{
+    if(admin == true)
+    {
+        ui->setupUi(this);
+        updateScreen();
+
+    }
+    else
+    {
+        ui->setupUi(this);
+        ui->lineButton->setEnabled(false);
+        ui->polylineButton->setEnabled(false);
+        ui->polygonButton->setEnabled(false);
+        ui->squareButton->setEnabled(false);
+        ui->rectangleButton->setEnabled(false);
+        ui->ellipsebutton->setEnabled(false);
+        ui->circleButton->setEnabled(false);
+        ui->textButton->setEnabled(false);
+        ui->removeButton->setEnabled(false);
+        ui->editButton->setEnabled(false);
+
+        ui->logout->setText("Login");
+
+        ui->adminLabel->setText("ADMIN ONLY");
+        updateScreen();
+    }
+
+}
+
 viewer::~viewer()
 {
     delete ui;
@@ -23,6 +56,7 @@ viewer::~viewer()
 void viewer::onAddLine()
 {
     shapeID::I_D = 1;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -32,16 +66,19 @@ void viewer::onAddLine()
 
     if(check == true)
     {
+        qDebug() << "fuck1";
         ui->canvas->addShape(confirm.myLine);
+        qDebug() << "fuck2";
     }
 
-    ui->canvas->update();
+    updateScreen();
 
 }
 
 void viewer::onAddPolyline()
 {
     shapeID::I_D = 2;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -54,12 +91,13 @@ void viewer::onAddPolyline()
         ui->canvas->addShape(confirm.myPolyline);
     }
 
-    ui->canvas->update();
+    updateScreen();
 }
 
 void viewer::onAddPolygon()
 {
     shapeID::I_D = 3;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -72,12 +110,13 @@ void viewer::onAddPolygon()
         ui->canvas->addShape(confirm.myPolygon);
     }
 
-    ui->canvas->update();
+    updateScreen();
 }
 
 void viewer::onAddRectangle()
 {
     shapeID::I_D = 4;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -90,12 +129,13 @@ void viewer::onAddRectangle()
         ui->canvas->addShape(confirm.myRectangle);
     }
 
-    ui->canvas->update();
+    updateScreen();
 }
 
 void viewer::onAddSquare()
 {
     shapeID::I_D = 5;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -108,12 +148,13 @@ void viewer::onAddSquare()
         ui->canvas->addShape(confirm.mySquare);
     }
 
-    ui->canvas->update();
+    updateScreen();
 }
 
 void viewer::onAddEllipse()
 {
     shapeID::I_D = 6;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -126,12 +167,13 @@ void viewer::onAddEllipse()
         ui->canvas->addShape(confirm.myEllipse);
     }
 
-    ui->canvas->update();
+    updateScreen();
 }
 
 void viewer::onAddCircle()
 {
     shapeID::I_D = 7;
+    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -144,12 +186,90 @@ void viewer::onAddCircle()
         ui->canvas->addShape(confirm.myCircle);
     }
 
-    ui->canvas->update();
+    updateScreen();
 }
 
 void viewer::onAddText()
 {
     shapeID::I_D = 8;
 
+}
+
+void viewer::onLogout()
+{
+    this->hide();
+
+    MainWindow *mainWindow = new MainWindow();
+    mainWindow->show();
+
+}
+
+void viewer::displayVector()
+{
+    myVec::vector <Shape*> display = ui->canvas->returnShapeList(); // copy constructor
+
+    ui->shapeTable->setRowCount(display.size());
+    ui->shapeTable->setColumnCount(2);
+
+    QTableWidgetItem *header1 = new QTableWidgetItem();
+    header1->setText("Shape");
+    ui->shapeTable->setHorizontalHeaderItem(0,header1);
+
+    QTableWidgetItem *header2 = new QTableWidgetItem();
+    header2->setText("ID");
+    ui->shapeTable->setHorizontalHeaderItem(1,header2);
+
+    for(int i = 0; i < display.size(); i ++)
+    {
+        int id = display[i]->getShapeID();
+
+        QString name = display[i]->getShapeName();
+
+        QTableWidgetItem *newItemOne = new QTableWidgetItem(QString::number(id));
+        QTableWidgetItem *newItemTwo = new QTableWidgetItem(name);
+
+        qDebug() << id;
+
+        ui->shapeTable->setItem(i, 1, newItemOne);
+        ui->shapeTable->setItem(i - 1, 2, newItemTwo);
+
+    }
+
+
+}
+
+void viewer::updateScreen()
+{
+    ui->canvas->update();
+    displayVector();
+}
+
+void viewer::removeShape()
+{
+    QTableWidgetItem *item;
+
+    int row = ui->shapeTable->currentRow(); // gets the entire row
+
+    item = ui->shapeTable->item(row, 1); // row, col;
+
+    if(item == NULL)
+    {
+        ui->removeLabel->setText("Please select a shape from above!");
+    }
+    else
+    {
+        ui->removeLabel->setText("");
+        int delItem = item->text().toInt();
+        ui->canvas->removeShape(delItem);
+    }
+
+
+    updateScreen();
+
+}
+
+void viewer::onRemoveClick()
+{
+    removeShape();
 }
 

@@ -12,7 +12,9 @@ Square::Square(const QColor &bColor, const QColor &color, const PenStyle &Pstyle
 
     startPoint.setX(x);
     startPoint.setY(y);
-    width = w;
+    this->width = w;
+
+    shapeName = "Square";
 
 }
 
@@ -25,6 +27,7 @@ Square::~Square()
 void Square::draw(QPaintDevice* device) //needs change
 {
     painter.begin(device);
+    painter.drawText(startPoint - QPoint {0, 4}, QString("ID: %1").arg(getShapeID()));
     painter.setPen(pen);
     painter.setBrush(brush);
     painter.drawRect(startPoint.rx(), startPoint.ry(), width, width);

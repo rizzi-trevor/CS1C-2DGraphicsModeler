@@ -178,10 +178,10 @@ void confirmpage::onConfirmClick()
         join = ui->joinBox->currentText().toStdString();
         qtJoin = getPJStyle(join);
 
-        myLine = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 1);
+        myLine = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, points[0], points[1]);
 
-        myLine->setStart(points[0].rx(), points[0].ry());
-        myLine->setEnd(points[1].rx(), points[1].ry());
+        //myLine->setStart(points[0].rx(), points[0].ry());
+        //myLine->setEnd(points[1].rx(), points[1].ry());
 
         //addShape(line);
 
@@ -201,7 +201,7 @@ void confirmpage::onConfirmClick()
         join = ui->joinBox->currentText().toStdString();
         qtJoin = getPJStyle(join);
 
-        myPolyline = new Polyline(white, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 2, points);
+        myPolyline = new Polyline(white, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, points);
 
         break;
     case 3:
@@ -225,7 +225,7 @@ void confirmpage::onConfirmClick()
         brushStyle = ui->styleBrushBox->currentText().toStdString();
         qtBrush = getBrushStyle(brushStyle);
 
-        myPolygon = new Polygon(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4, points);
+        myPolygon = new Polygon(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, points);
 
         break;
     case 4:
@@ -251,7 +251,7 @@ void confirmpage::onConfirmClick()
         length = ui->lBox->value();
         rectWidth = ui->wBox->value();
 
-        myRectangle = new Rectangle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4,length, rectWidth, points[0].rx(), points[0].ry());
+        myRectangle = new Rectangle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID,length, rectWidth, points[0].rx(), points[0].ry());
 
         break;
 
@@ -279,7 +279,7 @@ void confirmpage::onConfirmClick()
 
         rectWidth = ui->wBox->value();
 
-        mySquare = new Square(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4, rectWidth, points[0].rx(), points[0].ry());
+        mySquare = new Square(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, rectWidth, points[0].rx(), points[0].ry());
         break;
 
     case 6:
@@ -305,7 +305,7 @@ void confirmpage::onConfirmClick()
         rectWidth = ui->wBox->value();
         length = ui->lBox->value();
 
-        myEllipse = new Ellipse(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4, rectWidth, length, points[0].rx(), points[0].ry());
+        myEllipse = new Ellipse(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, rectWidth, length, points[0].rx(), points[0].ry());
 
         break;
 
@@ -331,7 +331,7 @@ void confirmpage::onConfirmClick()
 
         radius = ui->wBox->value();
 
-        myCircle = new Circle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4, radius, points[0].rx(), points[0].ry());
+        myCircle = new Circle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, radius, points[0].rx(), points[0].ry());
         break;
 
     case 8:
@@ -384,7 +384,7 @@ void confirmpage::onAddClick()
         pointCount++;
     }
 
-    if(pointCount == (maxPoints - 1))
+    if(pointCount == (maxPoints))
     {
        QString text = QString::number(maxPoints);
        QString labelText = "Only " + text + " point(s) can be added !";

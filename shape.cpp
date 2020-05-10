@@ -1,4 +1,5 @@
 #include "shape.h"
+#include <utility>
 
 using namespace Qt;
 
@@ -12,6 +13,7 @@ Shape::Shape()
     brush.setColor(black);
     brush.setStyle(SolidPattern);
     shapeID = 1;
+    shapeName = "genericShape";
 }
 
 Shape::Shape(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id)
@@ -67,6 +69,7 @@ void Shape::setBrushStyle(const BrushStyle &style)
 
 void Shape::draw(QPaintDevice* device)
 {
+   //painter.drawText(QPoint{10,10} - QPoint{0, 4}, QString("ID: %1").arg(shapeID));
     painter.begin(device);
     painter.setPen(pen);
     painter.setBrush(brush);

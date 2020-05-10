@@ -14,3 +14,5 @@ void Text::draw(QPaintDevice* device) //needs change
     painter.end();
 
 }
+
+//need to add shapeName = "Text";
