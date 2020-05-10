@@ -180,11 +180,6 @@ void confirmpage::onConfirmClick()
 
         myLine = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, properID::UNIQUE_ID, points[0], points[1]);
 
-        //myLine->setStart(points[0].rx(), points[0].ry());
-        //myLine->setEnd(points[1].rx(), points[1].ry());
-
-        //addShape(line);
-
         break;
 
     case 2:

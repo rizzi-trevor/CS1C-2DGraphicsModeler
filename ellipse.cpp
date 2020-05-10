@@ -44,3 +44,16 @@ void Ellipse::setB(int b)
 {
     this->b = b;
 }
+
+Ellipse& Ellipse::operator=(const Ellipse &src)
+{
+    this->pen = src.pen;
+    this->brush = src.brush;
+    this->shapeID = src.getShapeID();
+    this->shapeName = src.getShapeName();
+    this->a = src.a;
+    this->b = src.b;
+    this->startPoint = src.startPoint;
+
+    return *this;
+}

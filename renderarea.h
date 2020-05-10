@@ -33,8 +33,10 @@ public:
     int shapeIdAtIndex(int index);
 
 
-    //! return the shape at a given index
-    Shape shapeAtIndex(int index);
+    //! return the shape at a given ID
+    Shape *shapeAtID(int ID);
+
+    void setShape(Shape &src);
 
 protected:
 

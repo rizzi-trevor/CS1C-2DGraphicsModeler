@@ -264,8 +264,6 @@ Shape* readRectangle(ifstream& inFile)
     inFile >> l;
     inFile.ignore(numeric_limits<streamsize>::max(), ','); // right here
     inFile >> w;
-    qDebug() << "POOOO";
-    qDebug() << w;
 
     QPoint point(x, y);
 

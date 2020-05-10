@@ -31,6 +31,8 @@ public:
     //! get starting point
     QPoint getStart(){return start;};
 
+    Line &operator=(const Line &src);
+
 
 private:
     QPoint start;

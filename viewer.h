@@ -49,6 +49,8 @@ public slots:
 
     void onRemoveClick();
 
+    void onEditClick();
+
 
 private:
     Ui::viewer *ui;

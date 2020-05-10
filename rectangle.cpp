@@ -50,3 +50,17 @@ void Rectangle::setCenter(int x, int y)
     startPoint.setY(y);
 
 }
+
+
+Rectangle& Rectangle::operator=(const Rectangle &src)
+{
+    this->pen = src.pen;
+    this->brush = src.brush;
+    this->shapeID = src.getShapeID();
+    this->shapeName = src.getShapeName();
+    this->length = src.length;
+    this->width = src.width;
+    this->startPoint = src.startPoint;
+
+    return *this;
+}

@@ -37,6 +37,8 @@ public:
     //! move rectangle on canvas
     virtual void move(int x, int y);
 
+    Rectangle &operator=(const Rectangle &src);
+
     QRect getRect();
 
 private:

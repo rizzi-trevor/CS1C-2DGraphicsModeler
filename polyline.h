@@ -25,6 +25,8 @@ public:
     //! move the polyline on the canvas
     virtual void move(int x, int y);
 
+    Polyline &operator=(const Polyline &src);
+
 private:
     QPoint * pointList;
     int pointCount;

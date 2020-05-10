@@ -24,6 +24,7 @@ viewer::viewer(QWidget *parent, bool admin)
     {
         ui->setupUi(this);
         updateScreen();
+        this->setWindowTitle("2D-Editor [Admin]");
 
     }
     else
@@ -39,6 +40,7 @@ viewer::viewer(QWidget *parent, bool admin)
         ui->textButton->setEnabled(false);
         ui->removeButton->setEnabled(false);
         ui->editButton->setEnabled(false);
+        this->setWindowTitle("2D-Editor [Guest]");
 
         ui->logout->setText("Login");
 
@@ -66,9 +68,7 @@ void viewer::onAddLine()
 
     if(check == true)
     {
-        qDebug() << "fuck1";
         ui->canvas->addShape(confirm.myLine);
-        qDebug() << "fuck2";
     }
 
     updateScreen();
@@ -271,5 +271,173 @@ void viewer::removeShape()
 void viewer::onRemoveClick()
 {
     removeShape();
+}
+
+
+void viewer::onEditClick()
+{
+    QTableWidgetItem *item;
+
+    int row = ui->shapeTable->currentRow(); // gets the entire row
+
+    item = ui->shapeTable->item(row, 1); // row, col;
+
+    if(item == NULL)
+    {
+        ui->removeLabel->setText("Please select a shape from above!");
+    }
+    else
+    {
+        ui->removeLabel->setText("");
+        int delItem = item->text().toInt();
+        Shape * shapePtr = ui->canvas->shapeAtID(delItem);
+        Shape * confirmPtr;
+        QString name = shapePtr->getShapeName();
+        int editID = shapePtr->getShapeID();
+
+        if(name == "Line")
+        {
+            shapeID::I_D = 1;
+            properID::UNIQUE_ID = editID; // we run into an issue here if we try and edit shapes above index 8!!
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.myLine;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+
+        }
+        else if(name == "Polyline")
+        {
+            shapeID::I_D = 2;
+            properID::UNIQUE_ID = editID;
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.myPolyline;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+        }
+        else if(name == "Polygon")
+        {
+            shapeID::I_D = 3;
+            properID::UNIQUE_ID = editID;
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.myPolygon;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+        }
+        else if(name == "Rectangle")
+        {
+            shapeID::I_D = 4;
+            properID::UNIQUE_ID = editID;
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.myRectangle;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+        }
+        else if(name == "Square")
+        {
+            shapeID::I_D = 5;
+            properID::UNIQUE_ID = editID;
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.mySquare;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+        }
+        else if(name == "Ellipse")
+        {
+            shapeID::I_D = 6;
+            properID::UNIQUE_ID = editID;
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.myEllipse;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+        }
+        else if(name == "Circle")
+        {
+            shapeID::I_D = 7;
+            properID::UNIQUE_ID = editID;
+
+            confirmpage confirm;
+            bool check = false;
+
+            confirm.setModal(true);
+            confirm.exec();
+            check = confirm.getData();
+
+            confirmPtr = confirm.myCircle;
+
+            if(check == true)
+            {
+               ui->canvas->setShape(*confirmPtr);
+            }
+        }else if("Text")
+        {
+
+        }
+
+    }
+
+
+    updateScreen();
+
+
 }
 

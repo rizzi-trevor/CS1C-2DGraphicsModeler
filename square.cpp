@@ -46,3 +46,15 @@ void Square::setCenter(int x, int y)
     startPoint.setY(y);
 
 }
+
+Square& Square::operator=(const Square &src)
+{
+    this->pen = src.pen;
+    this->brush = src.brush;
+    this->shapeID = src.getShapeID();
+    this->shapeName = src.getShapeName();
+    this->width = src.width;
+    this->startPoint = src.startPoint;
+
+    return *this;
+}

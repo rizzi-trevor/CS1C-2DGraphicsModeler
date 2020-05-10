@@ -37,6 +37,8 @@ public:
     //1 get B length
     int getB(){return b;};
 
+    Ellipse &operator=(const Ellipse &src);
+
 
 private:
     QPoint startPoint;

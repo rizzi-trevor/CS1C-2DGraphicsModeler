@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1559</width>
-    <height>1102</height>
+    <width>1366</width>
+    <height>896</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -536,6 +536,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>editButton</sender>
+   <signal>clicked()</signal>
+   <receiver>viewer</receiver>
+   <slot>onEditClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>856</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>1147</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onAddLine()</slot>
@@ -548,5 +564,6 @@
   <slot>onAddText()</slot>
   <slot>onLogout()</slot>
   <slot>onRemoveClick()</slot>
+  <slot>onEditClick()</slot>
  </slots>
 </ui>

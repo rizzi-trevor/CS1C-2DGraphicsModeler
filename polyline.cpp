@@ -49,3 +49,22 @@ void Polyline::move(int x, int y)
     }
 
 }
+
+Polyline& Polyline::operator=(const Polyline &src)
+{
+    this->pen = src.pen;
+    this->brush = src.brush;
+    this->shapeID = src.getShapeID();
+    this->shapeName = src.getShapeName();
+    this->pointCount = src.pointCount;
+
+
+    pointList = new QPoint[5]; // maybe change from 5??
+    for(int i = 0; i < src.pointCount; i++)
+    {
+        pointList[i] = src.pointList[i];
+    }
+
+
+    return *this;
+}

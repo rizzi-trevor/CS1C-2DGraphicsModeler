@@ -52,3 +52,14 @@ void Line::setEnd(int x, int y)
 
 }
 
+Line& Line::operator=(const Line &src)
+{
+    this->pen = src.pen;
+    this->brush = src.brush;
+    this->shapeID = src.getShapeID();
+    this->shapeName = src.getShapeName();
+    this->start = src.start;
+    this->end = src.end;
+
+    return *this;
+}

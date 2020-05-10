@@ -13,12 +13,10 @@ Circle::Circle(const QColor &bColor, const QColor &color, const PenStyle &Pstyle
 void Circle::draw(QPaintDevice* device) //needs change
 {
     painter.begin(device);
+    painter.drawText(startPoint - QPoint{0, 10}, QString("ID: %1").arg(getShapeID()));
     painter.setPen(pen);
     painter.setBrush(brush);
     painter.drawEllipse(startPoint.rx(), startPoint.ry(), radius, radius);
-
-    painter.drawText(startPoint, QString("ID: %1").arg(getShapeID()));
-
     painter.end();
 
 }
@@ -39,4 +37,15 @@ void Circle::setRadius(int r)
     radius = r;
 }
 
+Circle& Circle::operator=(const Circle &src)
+{
+    this->pen = src.pen;
+    this->brush = src.brush;
+    this->shapeID = src.getShapeID();
+    this->shapeName = src.getShapeName();
+    this->radius = src.radius;
+    this->startPoint = src.startPoint;
+
+    return *this;
+}
 

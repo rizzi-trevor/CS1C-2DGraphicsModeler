@@ -24,7 +24,7 @@ public:
     //virtual ~Shape();
 
     //! get shapes ID
-    int getShapeID(){return shapeID;};
+    int getShapeID() const {return shapeID;};
 
     //! get pens width
     void setPenWidth(int width);
@@ -64,7 +64,9 @@ public:
    // virtual void move(int x1, int x2);
 
 
-    QString getShapeName(){return shapeName;};
+    Shape &operator=(const Shape &src);
+
+    QString getShapeName() const{return shapeName;};
 
     QPen pen;
 
@@ -75,9 +77,9 @@ public:
 
 protected:
     QString shapeName;
+    int shapeID;
 
 private:
-    int shapeID;
 
 };
 
