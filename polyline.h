@@ -27,6 +27,8 @@ public:
 
     Polyline &operator=(const Polyline &src);
 
+    vector<QPoint> returnPoints();
+
 private:
     QPoint * pointList;
     int pointCount;

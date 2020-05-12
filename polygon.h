@@ -36,6 +36,8 @@ public:
     //! get the area of the polygon
     virtual int getArea();
 
+    vector<QPoint> returnPoints(){return points;};
+
     Polygon &operator=(const Polygon &src);
 
 private:

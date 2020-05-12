@@ -1,6 +1,18 @@
 #include "fileparser.h"
 #include <QColor>
 
+const QMap<int, string> SHAPE_NAMES
+{
+    {1, "Line"},
+    {2, "Polyline"},
+    {3, "Polygon"},
+    {4, "Rectangle"},
+    {5, "Square"},
+    {6, "Ellipse"},
+    {7, "Circle"},
+    {8, "Text"},
+};
+
 myVec::vector<Shape*> ParseFile(int size)
 {
     ifstream inFile;
@@ -11,8 +23,7 @@ myVec::vector<Shape*> ParseFile(int size)
 
 
     myVec::vector<Shape*> returnShapes(size);
-    int id;
-
+    int id = 0;
     while(inFile)
     {
         string temp;
@@ -22,53 +33,55 @@ myVec::vector<Shape*> ParseFile(int size)
         inFile.ignore(numeric_limits<streamsize>::max(), ':');
 
         inFile >> temp;
+        qDebug() << QString::fromStdString(temp);
+
+        int universalID = SHAPE_NAMES.key(temp);
 
         if(inFile.eof())
         {
             break;
         }
 
-        qDebug() << id;
-        switch(id)
+        switch(universalID)
         {
         case 1: // line
             qDebug() << "CASE 1" ;
-            returnShapes.push_back(readLine(inFile));
+            returnShapes.push_back(readLine(inFile, id));
             break;
 
         case 2:// Polyline
             qDebug() << "CASE 2" ;
-            returnShapes.push_back(readPolyLine(inFile));
+            returnShapes.push_back(readPolyLine(inFile, id));
             break;
 
         case 3:// Polygon
             qDebug() << "CASE 3" ;
-            returnShapes.push_back(readPolygon(inFile));
+            returnShapes.push_back(readPolygon(inFile, id));
             break;
 
         case 4:// Rectangle
             qDebug() << "CASE 4" ;
-            returnShapes.push_back(readRectangle(inFile));
+            returnShapes.push_back(readRectangle(inFile, id));
             break;
 
         case 5:// Square
             qDebug() << "CASE 5" ;
-            returnShapes.push_back(readSquare(inFile));
+            returnShapes.push_back(readSquare(inFile, id));
             break;
 
         case 6:// Ellipse
             qDebug() << "CASE 6" ;
-            returnShapes.push_back(readEllipse(inFile));
+            returnShapes.push_back(readEllipse(inFile, id));
             break;
 
         case 7:// Circle
             qDebug() << "CASE 7" ;
-            returnShapes.push_back(readCircle(inFile));
+            returnShapes.push_back(readCircle(inFile, id));
             break;
 
         case 8:// Text
             qDebug() << "CASE 8" ;
-            returnShapes.push_back(ReadText(inFile));
+            returnShapes.push_back(ReadText(inFile, id));
             break;
 
         default:
@@ -83,7 +96,7 @@ myVec::vector<Shape*> ParseFile(int size)
 }
 
 
-Shape* readLine(ifstream &inFile)
+Shape* readLine(ifstream &inFile, int id)
 {
     int x, y, x2, y2, width;
     string color, style, cap, join;
@@ -125,11 +138,11 @@ Shape* readLine(ifstream &inFile)
     qtJoin = getPJStyle(join);
 
 
-    Line *line = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 1, front, end);
+    Line *line = new Line(qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, front, end);
     return line;
 }
 
-Shape* readPolyLine(ifstream &inFile)
+Shape* readPolyLine(ifstream &inFile, int id)
 {
     int width;
     string color, style, cap, join;
@@ -177,12 +190,12 @@ Shape* readPolyLine(ifstream &inFile)
      getline(inFile, join);
      qtJoin = getPJStyle(join);
 
-    Polyline *polyline = new Polyline(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 2, points);
+    Polyline *polyline = new Polyline(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, points);
 
     return polyline;
 }
 
-Shape* readPolygon(ifstream &inFile)
+Shape* readPolygon(ifstream &inFile, int id)
 {
     int width;
     string color, style, cap, join, bStyle, bColor;
@@ -236,13 +249,13 @@ Shape* readPolygon(ifstream &inFile)
     getline(inFile, bStyle);
     qtBrush = getBrushStyle(bStyle);
 
-    Polygon *polygon = new Polygon(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 3, points);
+    Polygon *polygon = new Polygon(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, points);
 
     return polygon;
 }
 
 
-Shape* readRectangle(ifstream& inFile)
+Shape* readRectangle(ifstream& inFile, int id)
 {
     int x, y, width;
     int l, w;
@@ -294,12 +307,12 @@ Shape* readRectangle(ifstream& inFile)
     getline(inFile, brushStyle);
     qtBrush = getBrushStyle(brushStyle);
 
-    Rectangle *rectangle = new Rectangle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 4, l, w, x , y);
+    Rectangle *rectangle = new Rectangle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, l, w, x , y);
 
     return rectangle;
 }
 
-Shape* readSquare(ifstream& inFile)
+Shape* readSquare(ifstream& inFile, int id)
 {
     int x, y, width;
     int w;
@@ -350,12 +363,12 @@ Shape* readSquare(ifstream& inFile)
     getline(inFile, brushStyle);
     qtBrush = getBrushStyle(brushStyle);
 
-    Square *square = new Square(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 5, w, x , y);
+    Square *square = new Square(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, w, x , y);
 
     return square;
 }
 
-Shape* readEllipse(ifstream& inFile)
+Shape* readEllipse(ifstream& inFile, int id)
 {
     int x, y, width;
     int a, b;
@@ -407,12 +420,12 @@ Shape* readEllipse(ifstream& inFile)
     qtBrush = getBrushStyle(brushStyle);
 
 
-    Ellipse *ellipse = new Ellipse(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 6, a, b, x, y ); // need qtBrushColor as well!!!!
+    Ellipse *ellipse = new Ellipse(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, a, b, x, y ); // need qtBrushColor as well!!!!
 
     return ellipse;
 }
 
-Shape* readCircle(ifstream& inFile)
+Shape* readCircle(ifstream& inFile, int id)
 {
     int x, y, width;
     int r;
@@ -462,13 +475,13 @@ Shape* readCircle(ifstream& inFile)
     qtBrush = getBrushStyle(brushStyle);
     qDebug() << qtBrush;
 
-    Circle *circle = new Circle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, 7, r, x, y); // maybe change the little plus thingss x+ r y+ r??
+    Circle *circle = new Circle(qtBColor, qtColor, qtStyle, qtCap, qtJoin, qtBrush, width, id, r, x, y); // maybe change the little plus thingss x+ r y+ r??
 
     return circle;
 }
 
 
-Shape* ReadText(ifstream& inFile)
+Shape* ReadText(ifstream& inFile, int id)
 {
     int x , y, fontPoint, length, width;
 
@@ -503,11 +516,12 @@ Shape* ReadText(ifstream& inFile)
 
     inFile.ignore(numeric_limits<streamsize>::max(), ':');
     getline(inFile, fontStyle);
+    fontStyle = " StyleNormal";
 
     inFile.ignore(numeric_limits<streamsize>::max(), ':');
     getline(inFile, fontWeight);
 
-    Text *text = new Text(black, qtColor, SolidLine, FlatCap, MiterJoin, SolidPattern, fontPoint, 8, align, fontFamily, fontStyle, fontWeight, textLine, x, y, length, width);
+    Text *text = new Text(black, qtColor, SolidLine, FlatCap, MiterJoin, SolidPattern, fontPoint, id, align, fontFamily, fontStyle, fontWeight, textLine, x, y, length, width);
 
     return text;
 }

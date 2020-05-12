@@ -27,6 +27,7 @@ SOURCES += \
     polyline.cpp \
     rectangle.cpp \
     renderarea.cpp \
+    serializer.cpp \
     shape.cpp \
     square.cpp \
     text.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     polyline.h \
     rectangle.h \
     renderarea.h \
+    serializer.h \
     shape.h \
     square.h \
     text.h \

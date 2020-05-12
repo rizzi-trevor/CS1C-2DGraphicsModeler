@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QTableWidgetItem>
 #include <QTableWidget>
+#include <fstream>
 #include "renderarea.h"
 #include "circle.h"
+#include "serializer.h"
 
 namespace Ui {
 class viewer;

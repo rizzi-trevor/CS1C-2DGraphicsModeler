@@ -68,3 +68,15 @@ Polyline& Polyline::operator=(const Polyline &src)
 
     return *this;
 }
+
+vector<QPoint> Polyline::returnPoints()
+{
+    vector<QPoint> vec;
+    for(int i = 0; i < pointCount; i++)
+    {
+        vec.push_back(pointList[i]);
+
+    }
+
+    return vec;
+}

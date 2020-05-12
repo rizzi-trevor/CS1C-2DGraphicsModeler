@@ -14,6 +14,8 @@ Polygon::Polygon(const QColor &bColor, const QColor &color, const PenStyle &Psty
         pointList[i] = Qpoints[i];
     }
 
+    points = Qpoints;
+
     pointCount = Qpoints.size();
 
     shapeName = "Polygon";

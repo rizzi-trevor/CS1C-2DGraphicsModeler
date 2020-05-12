@@ -208,10 +208,20 @@ void viewer::onAddText()
 
 void viewer::onLogout()
 {
+    ofstream outFile;
+
+    outFile.open("C:/Users/Trevor Rizzi/Desktop/CS1C-2D/shapes.txt");
     this->hide();
 
     MainWindow *mainWindow = new MainWindow();
     mainWindow->show();
+
+    myVec::vector<Shape*> vec = ui->canvas->returnShapeList();
+
+    outFile << vec;
+
+    outFile.close();
+
 
 }
 

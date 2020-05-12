@@ -31,6 +31,8 @@ public:
     //!get length
     int getLength(){return length;};
 
+    QPoint getStart(){return startPoint;};
+
     //! draw rectangle to canvas
     virtual void draw(QPaintDevice* device);
 

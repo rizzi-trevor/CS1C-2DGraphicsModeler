@@ -32,6 +32,8 @@ public:
     //! move square on canvas
     virtual void move(int x, int y);
 
+    QPoint getStart(){return startPoint;};
+
     Square &operator=(const Square &src);
 
 private:

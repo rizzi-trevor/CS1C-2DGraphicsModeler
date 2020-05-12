@@ -20,28 +20,28 @@ using namespace std;
 myVec::vector<Shape*> ParseFile(int size);
 
 //! read a line shape
-Shape* readLine(ifstream &inFile);
+Shape* readLine(ifstream &inFile, int id);
 
 //! read a polyline
-Shape* readPolyLine(ifstream &inFile);
+Shape* readPolyLine(ifstream &inFile, int id);
 
 //! read a polygon
-Shape* readPolygon(ifstream &inFile);
+Shape* readPolygon(ifstream &inFile, int id);
 
 //! read a rectangle
-Shape* readRectangle(ifstream &inFile);
+Shape* readRectangle(ifstream &inFile, int id);
 
 //! read a square
-Shape* readSquare(ifstream &inFile);
+Shape* readSquare(ifstream &inFile, int id);
 
 //! read an ellipse
-Shape* readEllipse(ifstream &inFile);
+Shape* readEllipse(ifstream &inFile, int id);
 
 //! read a circle
-Shape* readCircle(ifstream &inFile);
+Shape* readCircle(ifstream &inFile, int id);
 
 //! read text
-Shape* ReadText(ifstream& inFile);
+Shape* ReadText(ifstream& inFile,int id);
 
 //! get a QColor from a string
 QColor getColor(string color);

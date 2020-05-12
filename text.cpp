@@ -142,13 +142,13 @@ void Text::setFontFamily(string fontFamily){
 }
                      
 void Text::setFontStyle(string fontStyle){
-    if(fontStyle == " Normal"){
+    if(fontStyle == " StyleNormal"){
         font.setStyle(QFont::StyleNormal);
     }
-    else if(fontStyle == " Italic"){
+    else if(fontStyle == " StyleItalic"){
         font.setStyle(QFont::StyleItalic);
     }
-    else if(fontStyle == " Oblique"){
+    else if(fontStyle == " StyleOblique"){
         font.setStyle(QFont::StyleOblique);
     }
     else{

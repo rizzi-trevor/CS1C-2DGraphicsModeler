@@ -49,6 +49,7 @@ public:
 
     //! returnt the pen of a shape
     QPen getPen(){return pen;};
+    QBrush getBrush(){return brush;};
 
     //! pure virtual get area of shape
     virtual int getArea(){return 0;};

@@ -20,6 +20,9 @@ public:
     int getCenterPointY();
     int getLength();
     int getWidth();
+    AlignmentFlag getAlign(){return align;};
+    QFont getFont(){return font;};
+    QString getText(){return textString;};
     
     void setCenterPoint(int xCoord, int yCoord);
     void setLength(int lengthValue);
@@ -31,6 +34,8 @@ public:
     void setFontFamily(string fontFamily);
     void setFontStyle(string fontStyle);
     void setFontWeight(string fontWeight);
+
+    QPoint getStart(){return startPoint;};
     
 private:
     AlignmentFlag align;

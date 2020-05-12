@@ -35,6 +35,8 @@ public:
     //!Gets the radius of the circle
     int getRadius(){return radius;};
 
+    QPoint getStart(){return startPoint;};
+
     Circle &operator=(const Circle &src);
 
 private:
