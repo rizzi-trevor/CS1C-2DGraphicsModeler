@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>684</width>
-    <height>229</height>
+    <width>657</width>
+    <height>407</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="loginButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>140</y>
+      <x>30</x>
+      <y>200</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="clearButton">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>140</y>
+      <x>120</x>
+      <y>200</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -43,8 +43,8 @@
    <widget class="QLineEdit" name="usernameLine">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>50</y>
+      <x>80</x>
+      <y>130</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -53,8 +53,8 @@
    <widget class="QLineEdit" name="passwordLine">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>90</y>
+      <x>80</x>
+      <y>170</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -66,15 +66,15 @@
    <widget class="QPushButton" name="modelerButton">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>50</y>
-      <width>201</width>
+      <x>470</x>
+      <y>130</y>
+      <width>171</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>16</pointsize>
       <weight>50</weight>
       <bold>false</bold>
      </font>
@@ -86,11 +86,48 @@
    <widget class="QLabel" name="usernameLabel">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>50</y>
+      <x>10</x>
+      <y>130</y>
       <width>51</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
     </property>
     <property name="text">
      <string>Username:</string>
@@ -99,11 +136,48 @@
    <widget class="QLabel" name="passLabel">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>90</y>
+      <x>10</x>
+      <y>170</y>
       <width>51</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
     </property>
     <property name="text">
      <string>Password:</string>
@@ -112,23 +186,82 @@
    <widget class="QLabel" name="warningLabel">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>180</y>
+      <x>30</x>
+      <y>230</y>
       <width>181</width>
       <height>21</height>
+     </rect>
+    </property>
+    <property name="palette">
+     <palette>
+      <active>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </active>
+      <inactive>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </inactive>
+      <disabled>
+       <colorrole role="WindowText">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+        </brush>
+       </colorrole>
+      </disabled>
+     </palette>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>666</width>
+      <height>375</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
+   <zorder>label</zorder>
+   <zorder>loginButton</zorder>
+   <zorder>clearButton</zorder>
+   <zorder>usernameLine</zorder>
+   <zorder>passwordLine</zorder>
+   <zorder>modelerButton</zorder>
+   <zorder>usernameLabel</zorder>
+   <zorder>passLabel</zorder>
+   <zorder>warningLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>684</width>
+     <width>657</width>
      <height>21</height>
     </rect>
    </property>

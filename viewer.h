@@ -8,6 +8,8 @@
 #include "renderarea.h"
 #include "circle.h"
 #include "serializer.h"
+#include "contactpage.h"
+#include "testimobialview.h"
 
 namespace Ui {
 class viewer;
@@ -35,7 +37,7 @@ public slots:
 
     void onAddPolyline();
 
-    void onAddPolygon();
+    void onAddPolygone();
 
     void onAddRectangle();
 
@@ -53,9 +55,16 @@ public slots:
 
     void onEditClick();
 
+    void onContactClick();
+
+    void onTestimonialClick();
+
 
 private:
     Ui::viewer *ui;
+
+    contactPage *contact;
+    testimobialView *testimony;
 
 };
 

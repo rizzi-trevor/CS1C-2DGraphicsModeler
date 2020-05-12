@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     circle.cpp \
     confirmpage.cpp \
+    contactpage.cpp \
     ellipse.cpp \
     fileparser.cpp \
     line.cpp \
@@ -30,12 +31,14 @@ SOURCES += \
     serializer.cpp \
     shape.cpp \
     square.cpp \
+    testimobialview.cpp \
     text.cpp \
     viewer.cpp
 
 HEADERS += \
     circle.h \
     confirmpage.h \
+    contactpage.h \
     ellipse.h \
     fileparser.h \
     line.h \
@@ -48,16 +51,30 @@ HEADERS += \
     serializer.h \
     shape.h \
     square.h \
+    testimobialview.h \
     text.h \
     vector.h \
     viewer.h
 
 FORMS += \
     confirmpage.ui \
+    contactpage.ui \
     mainwindow.ui \
+    testimobialview.ui \
     viewer.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    BackLeftBotnet.jpg \
+    BackLeftBotnet2.jpg \
+    CS1C-2D.pro.user \
+    dconfig \
+    shapes.txt \
+    testimony.txt
+
+RESOURCES += \
+    image.qrc

@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QPixmap pix(":/image/src/img/BackLeftBotnet2.jpg");
+    ui->label->setPixmap(pix);
 }
 
 MainWindow::~MainWindow()

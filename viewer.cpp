@@ -91,7 +91,7 @@ void viewer::onAddPolyline()
     updateScreen();
 }
 
-void viewer::onAddPolygon()
+void viewer::onAddPolygone()
 {
     shapeID::I_D = 3;
     properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
@@ -459,6 +459,21 @@ void viewer::onEditClick()
 
     updateScreen();
 
+
+}
+
+void viewer::onContactClick()
+{
+    contact = new contactPage;
+
+    contact->show();
+}
+
+void viewer::onTestimonialClick()
+{
+    testimony = new testimobialView;
+
+    testimony->show();
 
 }
 

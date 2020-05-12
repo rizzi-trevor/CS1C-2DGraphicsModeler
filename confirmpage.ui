@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1138</width>
-    <height>669</height>
+    <width>450</width>
+    <height>595</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -435,8 +435,8 @@
    <slot>onConfirmClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>360</x>
-     <y>590</y>
+     <x>340</x>
+     <y>550</y>
     </hint>
     <hint type="destinationlabel">
      <x>258</x>
@@ -451,8 +451,8 @@
    <slot>onCancelClick()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>260</x>
-     <y>590</y>
+     <x>220</x>
+     <y>550</y>
     </hint>
     <hint type="destinationlabel">
      <x>89</x>
