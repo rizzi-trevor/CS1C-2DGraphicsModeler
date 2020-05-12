@@ -68,7 +68,7 @@ myVec::vector<Shape*> ParseFile(int size)
 
         case 8:// Text
             qDebug() << "CASE 8" ;
-            //returnShapes.push_back(readText(inFile));
+            returnShapes.push_back(ReadText(inFile));
             break;
 
         default:
@@ -468,9 +468,48 @@ Shape* readCircle(ifstream& inFile)
 }
 
 
-Shape* ReadText(std::ifstream& inFile, int id)
+Shape* ReadText(ifstream& inFile)
 {
-    //return text;
+    int x , y, fontPoint, length, width;
+
+    string color, textLine, align, fontFamily, fontStyle, fontWeight;
+    QColor qtColor;
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    inFile >> x;
+    inFile.ignore(numeric_limits<streamsize>::max(), ',');
+    inFile >> y;
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ',');
+    inFile >> length;
+    inFile.ignore(numeric_limits<streamsize>::max(), ',');
+    inFile >> width;
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    getline(inFile, textLine);
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    getline(inFile, color);
+    qtColor = getColor(color);
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    getline(inFile, align);
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    inFile >> fontPoint;
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    getline(inFile, fontFamily);
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    getline(inFile, fontStyle);
+
+    inFile.ignore(numeric_limits<streamsize>::max(), ':');
+    getline(inFile, fontWeight);
+
+    Text *text = new Text(black, qtColor, SolidLine, FlatCap, MiterJoin, SolidPattern, fontPoint, 8, align, fontFamily, fontStyle, fontWeight, textLine, x, y, length, width);
+
+    return text;
 }
 
 QColor getColor(string color)

@@ -44,6 +44,7 @@ public:
     Square *mySquare;
     Circle *myCircle;
     Ellipse *myEllipse;
+    Text *myText;
 
 
 private slots:

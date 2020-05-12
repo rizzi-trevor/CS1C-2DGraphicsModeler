@@ -8,6 +8,9 @@ class Text: public Shape
 {
 public:
     Text();
+
+    Text(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, string alignment, string fontFam, string fontStyle, string weight, string text, int x, int y, int textL, int textW);
+
     ~Text();
 
     virtual void draw(QPaintDevice* device);
@@ -22,7 +25,7 @@ public:
     void setLength(int lengthValue);
     void setWidth(int widthValue);
     void setTextString(string text);
-    void setTextAlignment(int alignment);
+    void setTextAlignment(string alignment);
     void setTextPointSize(int pointSize);
     void setTextColor(string color);
     void setFontFamily(string fontFamily);
@@ -30,12 +33,13 @@ public:
     void setFontWeight(string fontWeight);
     
 private:
-    int fontAlignment;
+    AlignmentFlag align;
     QString textString;
     QFont font;
     QPoint startPoint;
     int length;
     int width;
+
     
 };
 

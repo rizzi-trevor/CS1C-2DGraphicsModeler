@@ -41,7 +41,7 @@ Shape* readEllipse(ifstream &inFile);
 Shape* readCircle(ifstream &inFile);
 
 //! read text
-Shape* readText(ifstream &inFile);
+Shape* ReadText(ifstream& inFile);
 
 //! get a QColor from a string
 QColor getColor(string color);

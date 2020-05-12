@@ -12,13 +12,10 @@ viewer::viewer(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->canvas->update();
-
-
 }
 
 viewer::viewer(QWidget *parent, bool admin)
-       :QMainWindow(parent), ui(new Ui::viewer)
+    :QMainWindow(parent), ui(new Ui::viewer)
 {
     if(admin == true)
     {
@@ -58,7 +55,7 @@ viewer::~viewer()
 void viewer::onAddLine()
 {
     shapeID::I_D = 1;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -78,7 +75,7 @@ void viewer::onAddLine()
 void viewer::onAddPolyline()
 {
     shapeID::I_D = 2;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -97,7 +94,7 @@ void viewer::onAddPolyline()
 void viewer::onAddPolygon()
 {
     shapeID::I_D = 3;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -116,7 +113,7 @@ void viewer::onAddPolygon()
 void viewer::onAddRectangle()
 {
     shapeID::I_D = 4;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -135,7 +132,7 @@ void viewer::onAddRectangle()
 void viewer::onAddSquare()
 {
     shapeID::I_D = 5;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -154,7 +151,7 @@ void viewer::onAddSquare()
 void viewer::onAddEllipse()
 {
     shapeID::I_D = 6;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -173,7 +170,7 @@ void viewer::onAddEllipse()
 void viewer::onAddCircle()
 {
     shapeID::I_D = 7;
-    properID::UNIQUE_ID = ui->canvas->returnShapeList().size() + 1;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
     confirmpage confirm;
     bool check = false;
 
@@ -192,6 +189,20 @@ void viewer::onAddCircle()
 void viewer::onAddText()
 {
     shapeID::I_D = 8;
+    properID::UNIQUE_ID = ui->canvas->shapeIdAtEnd() + 1;
+    confirmpage confirm;
+    bool check = false;
+
+    confirm.setModal(true);
+    confirm.exec();
+    check = confirm.getData();
+
+    if(check == true)
+    {
+        ui->canvas->addShape(confirm.myText);
+    }
+
+    updateScreen();
 
 }
 
@@ -311,7 +322,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
 
         }
@@ -331,7 +342,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
         }
         else if(name == "Polygon")
@@ -350,7 +361,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
         }
         else if(name == "Rectangle")
@@ -369,7 +380,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
         }
         else if(name == "Square")
@@ -388,7 +399,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
         }
         else if(name == "Ellipse")
@@ -407,7 +418,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
         }
         else if(name == "Circle")
@@ -426,7 +437,7 @@ void viewer::onEditClick()
 
             if(check == true)
             {
-               ui->canvas->setShape(*confirmPtr);
+                ui->canvas->setShape(*confirmPtr);
             }
         }else if("Text")
         {

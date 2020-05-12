@@ -9,6 +9,9 @@ confirmpage::confirmpage(QWidget *parent) :
 
     pointCount = 0;
 
+    ui->textLabel->hide();
+    ui->textLine->hide();
+
     //PEN COLORS
     ui->colorBox->addItem(" white");
     ui->colorBox->addItem(" black");
@@ -133,7 +136,50 @@ confirmpage::confirmpage(QWidget *parent) :
         break;
 
     case 8:
+        maxPoints = 1;
+
+
+        ui->textLabel->show();
+        ui->textLine->show();
         ui->label->setText("Add Text");
+        ui->label_2->setText("Font Color");
+
+        ui->colorBrushBox->clear();
+        ui->brushLabel->setText("Font Weight");
+        ui->colorBrushBox->addItem(" Thin");
+        ui->colorBrushBox->addItem(" Light");
+        ui->colorBrushBox->addItem(" Normal");
+        ui->colorBrushBox->addItem(" Bold");
+
+        ui->styleBox->clear();
+        ui->label_4->setText("Font Style");
+        ui->styleBox->addItem(" StyleNormal");
+        ui->styleBox->addItem(" StyleItalic");
+        ui->styleBox->addItem(" StyleOblique");
+
+        ui->styleBrushBox->clear();
+        ui->styleBrushLabel->setText("Text Font Family");
+        ui->styleBrushBox->addItem(" Comic Sans MS");
+        ui->styleBrushBox->addItem(" Courier");
+        ui->styleBrushBox->addItem(" Helvetica");
+        ui->styleBrushBox->addItem(" Times");
+
+        ui->joinBox->clear();
+        ui->label_6->setText("Text Alignment");
+        ui->joinBox->addItem(" AlignLeft");
+        ui->joinBox->addItem(" AlignRight");
+        ui->joinBox->addItem(" AlignTop");
+        ui->joinBox->addItem(" AlignBottom");
+        ui->joinBox->addItem(" AlignCenter");
+
+        ui->label_8->setText("Point Size");
+
+
+        ui->label_7->hide();
+        ui->capBox->hide();
+
+
+
         break;
 
     default:
@@ -205,7 +251,7 @@ void confirmpage::onConfirmClick()
         color = ui->colorBox->currentText().toStdString();
         qtColor = getColor(color);
 
-        brushColor = ui->colorBox->currentText().toStdString();
+        brushColor = ui->colorBrushBox->currentText().toStdString();
         qtBColor = getColor(brushColor);
 
         style = ui->styleBox->currentText().toStdString();
@@ -228,7 +274,7 @@ void confirmpage::onConfirmClick()
         color = ui->colorBox->currentText().toStdString();
         qtColor = getColor(color);
 
-        brushColor = ui->colorBox->currentText().toStdString();
+        brushColor = ui->colorBrushBox->currentText().toStdString();
         qtBColor = getColor(brushColor);
 
         style = ui->styleBox->currentText().toStdString();
@@ -257,7 +303,7 @@ void confirmpage::onConfirmClick()
         color = ui->colorBox->currentText().toStdString();
         qtColor = getColor(color);
 
-        brushColor = ui->colorBox->currentText().toStdString();
+        brushColor = ui->colorBrushBox->currentText().toStdString();
         qtBColor = getColor(brushColor);
 
         style = ui->styleBox->currentText().toStdString();
@@ -282,7 +328,7 @@ void confirmpage::onConfirmClick()
         color = ui->colorBox->currentText().toStdString();
         qtColor = getColor(color);
 
-        brushColor = ui->colorBox->currentText().toStdString();
+        brushColor = ui->colorBrushBox->currentText().toStdString();
         qtBColor = getColor(brushColor);
 
         style = ui->styleBox->currentText().toStdString();
@@ -309,7 +355,7 @@ void confirmpage::onConfirmClick()
         color = ui->colorBox->currentText().toStdString();
         qtColor = getColor(color);
 
-        brushColor = ui->colorBox->currentText().toStdString();
+        brushColor = ui->colorBrushBox->currentText().toStdString();
         qtBColor = getColor(brushColor);
 
         style = ui->styleBox->currentText().toStdString();
@@ -330,11 +376,35 @@ void confirmpage::onConfirmClick()
         break;
 
     case 8:
+        string weight;
+        string style;
+        string fontFamily;
+        string align;
+        string text;
+        width = ui->widthBox->value(); // This is text point
+        color = ui->colorBox->currentText().toStdString();
+        qtColor = getColor(color);
+
+        weight = ui->colorBrushBox->currentText().toStdString();
+
+        style = ui->styleBox->currentText().toStdString();
+
+        fontFamily = ui->styleBrushBox->currentText().toStdString();
+
+        align = ui->joinBox->currentText().toStdString();
+
+        rectWidth = ui->wBox->value();
+        length = ui->lBox->value();
+
+        text = ui->textLine->text().toStdString();
+
+        myText = new Text(black, qtColor, SolidLine, FlatCap, MiterJoin, SolidPattern, width, properID::UNIQUE_ID, align, fontFamily, style, weight, text, points[0].rx(), points[0].ry(), length, rectWidth);
+
         break;
 
-    default:
+    /*default:
         qDebug() << "ERROR loading UI";
-        break;
+        break;(*/
 
     }
 

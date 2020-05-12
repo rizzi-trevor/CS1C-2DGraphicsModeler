@@ -32,6 +32,8 @@ public:
     //! return the id of a shape at a given index
     int shapeIdAtIndex(int index);
 
+    int shapeIdAtEnd();
+
 
     //! return the shape at a given ID
     Shape *shapeAtID(int ID);

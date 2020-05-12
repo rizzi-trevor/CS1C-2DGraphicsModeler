@@ -73,13 +73,36 @@ void RenderArea::setShape(Shape &src)
     {
         if(shapeList[i]->getShapeID() == ID)
         {
-           qDebug() << src.getPen();
            shapeList[i] = &src;
-           qDebug() << shapeList[i]->getPen();
-           qDebug() << src.getPen();
         }
 
     }
+}
+
+int RenderArea::shapeIdAtIndex(int index)
+{
+    for(int i = 0; i < shapeList.size(); i++)
+    {
+        if(i == index)
+        {
+            return shapeList[i]->getShapeID();
+        }
+
+    }
+
+}
+
+int RenderArea::shapeIdAtEnd()
+{
+    for(int i = 0; i < shapeList.size(); i++)
+    {
+        if(i == shapeList.size() - 1)
+        {
+            return shapeList[i]->getShapeID();
+        }
+
+    }
+
 }
 
 

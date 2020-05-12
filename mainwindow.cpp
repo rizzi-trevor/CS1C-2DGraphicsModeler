@@ -27,7 +27,6 @@ void MainWindow::onLoginClick()
         view = new viewer(this, true);
         view->show();
 
-
     }
     else
     {
