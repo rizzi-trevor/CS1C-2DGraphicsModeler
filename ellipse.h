@@ -34,7 +34,7 @@ public:
     //! get A length
     int getA(){return a;};
 
-    //1 get B length
+    //! get B length
     int getB(){return b;};
 
     Ellipse &operator=(const Ellipse &src);
