@@ -14,7 +14,7 @@ public:
     ~Text();
 
     virtual void draw(QPaintDevice* device);
-    virtual void move(int xCoord, int yCoord);
+    virtual void move(int x, int y);
     
     int getCenterPointX();
     int getCenterPointY();

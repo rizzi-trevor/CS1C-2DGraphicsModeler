@@ -105,5 +105,18 @@ int RenderArea::shapeIdAtEnd()
 
 }
 
+void RenderArea::moveShape(int index, int x, int y) // index is ShapeID
+{
+    for(int i = 1; i < shapeList.size(); i++)
+    {
+        qDebug() << index;
+        if(shapeIdAtIndex(i)  == index)
+        {
+            shapeList[i]->move(x , y);
+        }
+    }
+
+}
+
 
 

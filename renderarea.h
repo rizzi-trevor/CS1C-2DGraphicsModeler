@@ -21,6 +21,9 @@ public:
     //! add shape to shape vector
     void addShape(Shape* addShape);
 
+    //! Move a shapes starting coordinates
+    void  moveShape(int index, int x, int y);
+
     //! remove shape from shape vector
     void removeShape(int index);
 

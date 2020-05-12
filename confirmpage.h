@@ -61,15 +61,15 @@ private slots:
 
 private:
 
-    int maxPoints;
-    int pointCount;
-    int width;
+    int maxPoints;  ///< maximum amount of points allowed for a given shape
+    int pointCount; ///< Number of points already consumed
+    int width;      ///< width
 
     Ui::confirmpage *ui;
 
-    bool answer = false;
+    bool answer = false; ///< cancel button returns false
 
-    vector<QPoint> points;
+    vector<QPoint> points; ///< stores shape points
 
     string color, style, cap, join, brushStyle, brushColor;
 
@@ -81,18 +81,4 @@ private:
 };
 
 
-/*/////////////////////
-
-{
-    confirmpage confirm;
-    bool check = false;
-
-    confirm.setModal(true);
-    confirm.exec();
-    check = confirm.getData();
-
-    return check;
-}
-
-*///////////////////////
 #endif // CONFIRMPAGE_H

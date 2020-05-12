@@ -89,6 +89,12 @@ Shape& Shape::operator=(const Shape &src)
     return *this;
 }
 
+void Shape::move(int x1, int x2)
+{
+
+
+}
+
 
 
 

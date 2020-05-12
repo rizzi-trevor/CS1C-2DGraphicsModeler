@@ -53,40 +53,50 @@ void Text::draw(QPaintDevice* device) //needs change
 }
 
 
-void Text::move(int xCoord, int yCoord){
-    setCenterPoint(xCoord, yCoord);
+void Text::move(int x, int y)
+{
+
+    setCenterPoint(x, y);
 }
 
-int Text::getCenterPointX(){
+int Text::getCenterPointX()
+{
     return startPoint.rx();
 }
 
-int Text::getCenterPointY(){
+int Text::getCenterPointY()
+{
     return startPoint.ry();
 }
 
-int Text::getLength(){
+int Text::getLength()
+{
     return length;
 }
 
-int Text::getWidth(){
+int Text::getWidth()
+{
     return width;
 }
 
-void Text::setCenterPoint(int xCoord, int yCoord){
+void Text::setCenterPoint(int xCoord, int yCoord)
+{
     startPoint.setX(xCoord);
     startPoint.setY(yCoord);
 }
 
-void Text::setLength(int lengthValue){
+void Text::setLength(int lengthValue)
+{
     length = lengthValue;
 }
 
-void Text::setWidth(int widthValue){
+void Text::setWidth(int widthValue)
+{
     width = widthValue;
 }
 
-void Text::setTextString(string text){
+void Text::setTextString(string text)
+{
     textString = QString::fromStdString(text);
 }
 
@@ -115,7 +125,8 @@ void Text::setTextAlignment(string alignment)
 
 }
 
-void Text::setTextPointSize(int pointSize){
+void Text::setTextPointSize(int pointSize)
+{
     font.setPointSize(pointSize);
 }
 

@@ -62,7 +62,7 @@ public:
 
     //! virtual draw to register shape on canvas
     virtual void draw(QPaintDevice* device);
-   // virtual void move(int x1, int x2);
+   virtual void move(int x1, int x2);
 
 
     Shape &operator=(const Shape &src);

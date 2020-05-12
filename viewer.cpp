@@ -37,12 +37,17 @@ viewer::viewer(QWidget *parent, bool admin)
         ui->textButton->setEnabled(false);
         ui->removeButton->setEnabled(false);
         ui->editButton->setEnabled(false);
+        ui->xBox->setEnabled(false);
+        ui->yBox->setEnabled(false);
+        ui->moveButton->setEnabled(false);
         this->setWindowTitle("2D-Editor [Guest]");
 
         ui->logout->setText("Login");
 
         ui->adminLabel->setText("ADMIN ONLY");
         updateScreen();
+
+        //ui->canvas->moveShape();
     }
 
 }
@@ -474,6 +479,38 @@ void viewer::onTestimonialClick()
     testimony = new testimobialView;
 
     testimony->show();
+
+}
+
+void viewer::moveSelectedShape()
+{
+    QTableWidgetItem *item;
+    int x = ui->xBox->value();
+    int y = ui->yBox->value();
+
+    int row = ui->shapeTable->currentRow(); // gets the entire row
+
+    item = ui->shapeTable->item(row, 1); // row, col;
+
+    if(item == NULL)
+    {
+        ui->removeLabel->setText("Please select a shape from above!");
+    }
+    else
+    {
+        ui->removeLabel->setText("");
+        int moveItem = item->text().toInt();
+        ui->canvas->moveShape(moveItem, x, y);
+    }
+
+
+    updateScreen();
+
+}
+
+void viewer::onMoveClick()
+{
+    moveSelectedShape();
 
 }
 

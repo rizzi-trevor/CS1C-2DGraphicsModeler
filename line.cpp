@@ -36,6 +36,8 @@ void Line::move(int x, int y)
 
     setStart(x,y);
     setEnd(endX + offX, endY + offY);
+
+
 }
 
 void Line::setStart(int x, int y)

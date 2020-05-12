@@ -31,6 +31,8 @@ public:
 
     void removeShape();
 
+    void moveSelectedShape();
+
 public slots:
 
     void onAddLine();
@@ -58,6 +60,9 @@ public slots:
     void onContactClick();
 
     void onTestimonialClick();
+
+    void onMoveClick();
+
 
 
 private:

@@ -9,7 +9,7 @@ PenJoinStyle: MiterJoin
 
 ShapeId: 2
 ShapeType: Polyline
-ShapeDimensions: 460, 90, 470, 20, 530, 40, 540, 80
+ShapeDimensions: 500, 500, 510, 430, 570, 450, 580, 490
 PenColor: green
 PenWidth: 6
 PenStyle: SolidLine
@@ -62,8 +62,8 @@ BrushStyle: SolidPattern
 
 ShapeId: 8
 ShapeType: Text
-ShapeDimensions: 250, 425, 500, 50
-TextString:                        Class Project 2 - 2D Graphics Modeler
+ShapeDimensions: 300, 300, 500, 50
+TextString:                                 Class Project 2 - 2D Graphics Modeler
 TextColor: blue
 TextAlignment: AlignCenter
 TextPointSize: 10
@@ -83,13 +83,13 @@ BrushColor: white
 BrushStyle: SolidPattern
 
 ShapeId: 10
-ShapeType: Polygon
-ShapeDimensions: 1234, 234, 1234, 1234, 34, 34
-PenColor: gray
-PenWidth: 2
-PenStyle: DashDotDotLine
+ShapeType: Circle
+ShapeDimensions: 400, 400, 50
+PenColor: green
+PenWidth: 5
+PenStyle: SolidLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
-BrushColor: white
-BrushStyle: NoBrush
+BrushColor: blue
+BrushStyle: SolidPattern
 
