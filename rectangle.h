@@ -7,41 +7,73 @@ class Rectangle: public Shape
 {
 public:
 
-    //! Construct rectangle
+    /**
+     * @brief Rectangle()
+     * constructor
+     */
     Rectangle();
 
-    //! construct rectangle with style parameters
+    /**
+     * @brief Rectangle()
+     * constructor with parameters
+     */
     Rectangle(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int l, int w, int x, int y);
 
-    //! destruct rectangle
+    /**
+     * @brief Rectangle()
+     * destructor
+     */
     ~Rectangle();
 
-    //! set center of rectangle
+    /**
+     * @brief setCenter()
+     * set center of shape
+     */
     void setCenter(int x, int y);
 
-    //! set length of rectangle
+    /**
+     * @brief setLength()
+     * set length of shape
+     */
     void setLength(int l){length = l;};
 
-    //! set width of rectangle
+    /**
+     * @brief setWidth()
+     * set width of shape
+     */
     void setWidth(int w){width = w;};
 
-    //! get width of rectangle
+    /**
+     * @brief getWidth()
+     * get width of shape
+     */
     int getWidth(){return width;};
 
-    //!get length
+    /**
+     * @brief getLength()
+     * get length of shape
+     */
     int getLength(){return length;};
 
+    /**
+     * @brief getStart()
+     * get starting point of shape
+     */
     QPoint getStart(){return startPoint;};
 
-    //! draw rectangle to canvas
+    /**
+     * @brief draw()
+     * draw shape to canvas
+     */
     virtual void draw(QPaintDevice* device);
 
-    //! move rectangle on canvas
+    /**
+     * @brief move()
+     * move shape on canvas
+     */
     virtual void move(int x, int y);
 
     Rectangle &operator=(const Rectangle &src);
-
-    QRect getRect();
 
 private:
     QPoint startPoint;

@@ -3,32 +3,60 @@
 
 #include "shape.h"
 
-
+/**
+ * @brief Line
+ * Line class inherited from shape
+ */
 class Line: public Shape
 {
 public:
-    //! construct line
+    /**
+     * @brief Line()
+     *
+     */
     Line(const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, QPoint s, QPoint e);
 
-    //! destruct line
+    /**
+     * @brief ~Line()
+     * destructor
+     *
+     */
     ~Line();
 
-    //! draw line to canvas
+    /**
+     * @brief draw()
+     * draws shape to canvas
+     */
     virtual void draw(QPaintDevice* device);
 
-    //! move line on canvas
+    /**
+     * @brief move()
+     * moves location of shape on canvas
+     */
     virtual void move(int x, int y);
 
-    //! set starting point of line
+    /**
+     * @brief setStart()
+     * sets start point of line
+     */
     void setStart(int x, int y);
 
-    //! set ending point of line
+    /**
+     * @brief setEnd()
+     * sets end point of line
+     */
     void setEnd(int x, int y);
 
-    //! get ending point
+     /**
+     * @brief getEnd()
+     * returns the end point of line
+     */
     QPoint getEnd(){return end;};
 
-    //! get starting point
+    /**
+     * @brief getStart()
+     * returns the start point of line
+     */
     QPoint getStart(){return start;};
 
     Line &operator=(const Line &src);

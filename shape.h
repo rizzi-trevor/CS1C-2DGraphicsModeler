@@ -11,62 +11,127 @@
 using namespace Qt;
 using namespace std;
 
+
+/**
+ * @brief Shape
+ * shape class
+ * all of these public or protected
+ * methods are inherited
+ * in the shape hierarchy
+ */
 class Shape
 {
 public:
 
-    //! Shape constructor
+    /**
+     * @brief Shape()
+     * constructor
+     */
     Shape();
 
-    //! shape paramaterized constructor
+    /**
+     * @brief Shape()
+     * Parameterized constructor
+     */
     Shape(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id);
 
-    //virtual ~Shape();
-
-    //! get shapes ID
+    /**
+     * @brief getShapeID()
+     * returns the shapeid
+     */
     int getShapeID() const {return shapeID;};
 
-    //! get pens width
+    /**
+     * @brief setPenWidth()
+     * returns the width of the pen
+     */
     void setPenWidth(int width);
 
-    //! set color of a pen
+    /**
+     * @brief setPenColor()
+     * sets the pen color of a shape
+     */
     void setPenColor(const QColor &color);
 
-    //! set pen style
+    /**
+     * @brief setPenStyle()
+     * set the style of a pen
+     */
     void setPenStyle(const PenStyle &style);
 
-    //! set pen cap style
+    /**
+     * @brief setPenCapStyle()
+     * set the pen cap style
+     */
     void setPenCapStyle(const PenCapStyle &style);
-
-    //! set pen join style
+    /**
+     * @brief setPenJoinStyle()
+     * set the pen join style
+     */
     void setPenJoinStyle(const PenJoinStyle &style);
 
-    //! set brush color
+    /**
+     * @brief setBrushColor()
+     * set the brush color
+     */
     void setBrushColor(const QColor &color);
 
-    //! set brush style
+    /**
+     * @brief setBrushStyle()
+     * set the brush sttyle
+     */
     void setBrushStyle(const BrushStyle &style);
 
-    //! returnt the pen of a shape
+    /**
+     * @brief getPen()
+     * return the pen
+     */
     QPen getPen(){return pen;};
+
+    /**
+     * @brief getBrush()
+     * return the brush
+     */
     QBrush getBrush(){return brush;};
 
-    //! pure virtual get area of shape
+    /**
+     * @brief getArea()
+     * pure virtual
+     * gets the area of a shape
+     */
     virtual int getArea(){return 0;};
 
-    //! pure virtual get perimeter of shape
+    /**
+     * @brief getPerim()
+     * pure virtual
+     * gets the perimeter of a
+     * shape
+     */
     virtual int getPerim(){return 0;};
 
-    //! Pure virtual get top right corner of shape
+    /**
+     * @brief getPos()
+     *gets the position of a shape
+     *
+     */
     virtual QPoint getPos(){return {0,0};};
 
-    //! virtual draw to register shape on canvas
+    /**
+     * @brief draw()
+     * draws the shape to the canvas
+     */
     virtual void draw(QPaintDevice* device);
+
+    /**
+     * @brief move()
+     * moves the shape on the canvas
+     */
    virtual void move(int x1, int x2);
 
-
-    Shape &operator=(const Shape &src);
-
+    /**
+     * @brief getShapeName()
+     *  returns the name of a shape
+     */
     QString getShapeName() const{return shapeName;};
 
     QPen pen;

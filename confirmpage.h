@@ -16,6 +16,12 @@ namespace properID
     extern int UNIQUE_ID;
 }
 
+
+/**
+ * @brief confirmpage()
+ * ui page for adding and editing shapes
+ *
+ */
 namespace Ui {
 class confirmpage;
 }
@@ -25,13 +31,23 @@ class confirmpage : public QDialog
     Q_OBJECT
 public:
 
-    //! confirmpage explicit constructor
+    /**
+     * @brief confirmpage()
+     *  explicit default constructor
+     */
     explicit confirmpage(QWidget *parent = nullptr);
 
-    //! confirmpage destrcutor
+    /**
+     * @brief ~confirmpage()
+     * default destructor
+     */
     ~confirmpage();
 
-    //! confirmpage constructor to confirm adding shapes
+    /**
+     * @brief confirmpage()
+     * alternate class constructor
+     *
+     */
     confirmpage(QWidget *parent, bool &returnAnswer);
 
     //! gets data from confirm page
@@ -49,14 +65,28 @@ public:
 
 private slots:
 
-    //! Cancels the add shape
+    /**
+     * @brief onCancelClick()
+     * closes the window, and does NOT add a shape
+     * to the canvas
+     *
+     */
     void onCancelClick();
 
-    //! confirms addition of a shape
+    /**
+     * @brief onConfirmClick()
+     * closes the window and DOES add a shape to the canvas
+     */
     void onConfirmClick();
 
 
-    //! confirms addition of points to a shape
+    /**
+     * @brief onAddClick()
+     * adds QPoints to a list of Qpoints
+     *
+     * This is meant for any shape that has a starting point and
+     * possibly others
+     */
     void onAddClick();
 
 private:

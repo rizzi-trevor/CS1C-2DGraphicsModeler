@@ -78,17 +78,6 @@ void Shape::draw(QPaintDevice* device)
 }
 
 
-Shape& Shape::operator=(const Shape &src)
-{
-    this->pen = src.pen;
-    this->brush = src.brush;
-    this->shapeID = src.getShapeID();
-    this->shapeName = src.getShapeName();
-
-
-    return *this;
-}
-
 void Shape::move(int x1, int x2)
 {
 

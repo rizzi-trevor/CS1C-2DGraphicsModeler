@@ -7,31 +7,60 @@ class Square: public Shape
 {
 public:
 
-    //! Square COnstructor
+    /**
+     * @brief Square()
+     * default constructor
+     */
     Square();
 
-    //! square constructor with params
+    /**
+     * @brief Square()
+     * paramaterized constructor
+     */
     Square(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int w, int x, int y);
 
-    //! destructs square
+    /**
+     * @brief ~Square()
+     * destructor
+     */
     ~Square();
 
-    //! set center of square
+    /**
+     * @brief setCenter()
+     * sets the center of the shape
+     */
     void setCenter(int x, int y);
 
-    //! set width of square
+    /**
+     * @brief setWidth()
+     * sets the width of the shape
+     */
     void setWidth(int w){width = w;};
 
-    //! get width of square
+    /**
+    * @brief getWidth()
+    * gets the width of the shape
+    */
     int getWidth(){return width;};
 
 
-    //! draw square to canvas
+    /**
+     * @brief draw()
+     * draws the shape to the canvas
+     */
     virtual void draw(QPaintDevice* device);
 
-    //! move square on canvas
+    /**
+     * @brief move()
+     * moves the shape on the canvas
+     */
     virtual void move(int x, int y);
 
+
+    /**
+     * @brief getStart()
+     * gets the starting point
+     */
     QPoint getStart(){return startPoint;};
 
     Square &operator=(const Square &src);

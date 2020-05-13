@@ -9,43 +9,91 @@
 
 #include <QWidget>
 
-//was a QOpenGlWdiget
 
+/**
+ * @brief RenderArea
+ *  inherits from qwidget
+ *  this class is used to add new functionality
+ *  to a qtgraphics view. It implements the
+ * draw canvas
+ *
+ */
 class RenderArea : public QWidget
 {
         Q_OBJECT
 public:
-    //! explicit render area constructor
+    /**
+     * @brief RenderArea()
+     * explicit ui constructor
+     */
     explicit RenderArea(QWidget *parent = 0);
 
-    //! add shape to shape vector
+    /**
+     * @brief addShape()
+     * add shape to the canvas
+     */
     void addShape(Shape* addShape);
 
-    //! Move a shapes starting coordinates
+    /**
+     * @brief moveShape()
+     * move shape on the canvas
+     */
     void  moveShape(int index, int x, int y);
 
-    //! remove shape from shape vector
+    /**
+     * @brief removeShape()
+     * remove shape from the canvas
+     */
     void removeShape(int index);
 
+    /**
+     * @brief returnShapeList()
+     * return the list of shapes on the canvas
+     */
     myVec::vector<Shape*> returnShapeList();
 
-    //! return list size of shape vector
+    /**
+     * @brief listSize()
+     * return the size of the list
+     */
     int listSize();
 
-    //! return the id of a shape at a given index
+    /**
+     * @brief shapeIdAtIndex()
+     * return the shape ID at any given index
+     */
     int shapeIdAtIndex(int index);
 
+    /**
+     * @brief shapeIdAtEnd()
+     * returns the shapeID at the
+     * very end of the vector
+     */
     int shapeIdAtEnd();
 
 
-    //! return the shape at a given ID
+    /**
+     * @brief shapeAtID()
+     *  returns a point to shape
+     *  with any matching id
+     *
+     */
     Shape *shapeAtID(int ID);
 
+    /**
+     * @brief setShape()
+     *  edits a shape
+     */
     void setShape(Shape &src);
 
 protected:
 
-    //! paint the shape vector to the canvas
+    /**
+     * @brief paintEvent()
+     *  paints the shapelist to the canvas
+     * This uses the draw functions implemented
+     * in every shape class
+     */
     void paintEvent(QPaintEvent *event) override;
 
 private:

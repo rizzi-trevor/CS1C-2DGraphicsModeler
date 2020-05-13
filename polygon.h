@@ -8,34 +8,68 @@ class Polygon: public Shape
 {
 public:
 
-    //! construct polygon
+    /**
+     * @brief Polygon()
+     * default constructor
+     */
     Polygon();
 
-    //! construct polygon with parameters
+    /**
+     * @brief Polygon()
+     * alternate constructor
+     * with parameters
+     */
     Polygon(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, vector<QPoint> Qpoints);
 
-    //! destruct polygon
+    /**
+     * @brief Polygon()
+     * destructor
+     */
     ~Polygon();
 
 
-    //! add point to polygon
+    /**
+     * @brief addPoint()
+     * adds point to pointlist
+     */
     void addPoint(int x, int y);
 
-    //! initialize list of points for polygon
+    /**
+     * @brief initializeList()
+     * initializes point list
+     */
     void initializeList();
 
-    //! draw polygon to the canvas
+    /**
+     * @brief draw()
+     * draws the shape to the canvas
+     */
     virtual void draw(QPaintDevice* device);
 
-    //! move the polygon on the canvas
+    /**
+     * @brief move()
+     * moves the location of the shape
+     * on the canvas
+     */
     virtual void move(int x, int y);
 
-    //! get the perimeter of the polygon
+    /**
+     * @brief getPerimeter()
+     * gets the perimeter of the shape
+     */
     virtual int getPerimeter();
 
-    //! get the area of the polygon
+    /**
+     * @brief getArea()
+     * gets the area of the shape
+     */
     virtual int getArea();
 
+    /**
+     * @brief returnPoints()
+     * returns the vector of points that
+     * any given polygon has
+     */
     vector<QPoint> returnPoints(){return points;};
 
     Polygon &operator=(const Polygon &src);

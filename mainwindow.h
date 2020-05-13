@@ -9,26 +9,46 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+/**
+ * @brief getStart()
+ *
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public slots:
 
-    //! login to the program
+    /**
+     * @brief onLoginClick()
+     * closes login window opens up editor
+     */
     void onLoginClick();
 
-    //! clear the logintext
+    /**
+     * @brief onClearClick()
+     * clears the user and pass
+     * forms
+     */
     void onClearClick();
 
-    //! use the program as a guest
+    /**
+     * @brief onModelerClick()
+     * loads the 2d modeler
+     */
     void onModelerClick();
 
 public:
-    //! construct login window
+    /**
+     * @brief MainWindow()
+     *main window constructor
+     */
     MainWindow(QWidget *parent = nullptr);
 
-    //! destruct login window
+    /**
+     * @brief MainWindow()
+     * destructor
+     */
     ~MainWindow();
 
 private:

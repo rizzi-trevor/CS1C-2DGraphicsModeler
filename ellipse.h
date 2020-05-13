@@ -3,40 +3,84 @@
 
 #include "shape.h"
 
+/**
+ * @brief Ellipse()
+ * ellipse shape inherited from shape class
+ * custom shape for low level qpainter
+ */
 class Ellipse: public Shape
 {
 public:
 
-    //! Ellipse overloaded constructor
+    /**
+     * @brief Ellipse()
+     * Alternate construct with parameters
+     */
     Ellipse(const QColor &bColor, const QColor &color, const PenStyle &Pstyle, const PenCapStyle &PCstyle, const PenJoinStyle &PJstyle, const BrushStyle &Bstyle, int width, int id, int a, int b, int x, int y);
 
-    //! Destructs ellipse class
+    /**
+     * @brief ~Ellipse()
+     * destructs ellipse class
+     */
     ~Ellipse();
 
-    //! Draws the shape to the canvas
+    /**
+     * @brief draw()
+     * draws shape to canvas
+     */
     virtual void draw(QPaintDevice* device);
 
-    //! Moves the location of the shape on the canvas
+    /**
+     * @brief move()
+     * moves position of shape
+     * on canvas
+     */
     virtual void move(int x, int y);
 
-    //! set the center of ellipse
+    /**
+     * @brief setCenter()
+     * sets center of shape
+     */
     void setCenter(int x, int y);
 
-    //! set A length of ellipse
+    /**
+     * @brief setA()
+     * sets the A length of
+     * an ellipse
+     */
     void setA(int a);
 
-    //! set B length of ellipse
+    /**
+     * @brief setB()
+     * sets the B length of an ellipse
+     */
     void setB(int b);
 
-    //! get area of the ellipse
+    /**
+     * @brief getArea()
+     * gets the area of the ellipse
+     */
     virtual int getArea(){return (M_PI * a * b);};
 
-    //! get A length
+    /**
+     * @brief getA()
+     * gets the A length of
+     * ellipse
+     */
     int getA(){return a;};
 
-    //1 get B length
+    /**
+     * @brief getB()
+     * gets the B length
+     * of ellipse
+     */
     int getB(){return b;};
 
+
+    /**
+     * @brief getStart()
+     * gets the starting point of ellipse
+     */
     QPoint getStart(){return startPoint;};
 
     Ellipse &operator=(const Ellipse &src);

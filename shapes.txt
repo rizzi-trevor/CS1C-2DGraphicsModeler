@@ -63,24 +63,13 @@ BrushStyle: SolidPattern
 ShapeId: 8
 ShapeType: Text
 ShapeDimensions: 300, 300, 500, 50
-TextString:                                 Class Project 2 - 2D Graphics Modeler
+TextString:                                      Class Project 2 - 2D Graphics Modeler
 TextColor: blue
 TextAlignment: AlignCenter
 TextPointSize: 10
 TextFontFamily: Comic Sans MS
 TextFontStyle: StyleNormal
 TextFontWeight: Normal
-
-ShapeId: 9
-ShapeType: Circle
-ShapeDimensions: 122, 122, 122
-PenColor: cyan
-PenWidth: 12
-PenStyle: DashDotDotLine
-PenCapStyle: FlatCap
-PenJoinStyle: RoundJoin
-BrushColor: white
-BrushStyle: SolidPattern
 
 ShapeId: 10
 ShapeType: Circle
@@ -91,5 +80,16 @@ PenStyle: SolidLine
 PenCapStyle: FlatCap
 PenJoinStyle: MiterJoin
 BrushColor: blue
+BrushStyle: SolidPattern
+
+ShapeId: 11
+ShapeType: Circle
+ShapeDimensions: 300, 300, 50
+PenColor: cyan
+PenWidth: 12
+PenStyle: DashDotDotLine
+PenCapStyle: FlatCap
+PenJoinStyle: RoundJoin
+BrushColor: white
 BrushStyle: SolidPattern
 
